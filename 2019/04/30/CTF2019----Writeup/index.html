@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>\*CTF2019----Writeup | hghhgghhg | CTF is funny!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="writeup">
+    <meta name="description" content="miscbabyflashDescription​    Recently my younger brother learnt how to make a flash. Here’s his first work. ​        File:  823081f554a741199bec9a03c2653df0.zip(里面有一个swf文件) Analyze1.swf文件分离 2.MP3文件隐写">
+<meta name="keywords" content="writeup">
+<meta property="og:type" content="article">
+<meta property="og:title" content="\*CTF2019----Writeup">
+<meta property="og:url" content="http:&#x2F;&#x2F;localhost:4000&#x2F;2019&#x2F;04&#x2F;30&#x2F;CTF2019----Writeup&#x2F;index.html">
+<meta property="og:site_name" content="hghhgghhg">
+<meta property="og:description" content="miscbabyflashDescription​    Recently my younger brother learnt how to make a flash. Here’s his first work. ​        File:  823081f554a741199bec9a03c2653df0.zip(里面有一个swf文件) Analyze1.swf文件分离 2.MP3文件隐写">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="e:&#x2F;文档中心&#x2F;CTF&#x2F;writeup&#x2F;图片&#x2F;babyflash-1.PNG">
+<meta property="og:image" content="e:&#x2F;文档中心&#x2F;CTF&#x2F;@ctf&#x2F;misc&#x2F;823081f554a741199bec9a03c2653df0&#x2F;flash&#x2F;flash.PNG">
+<meta property="og:image" content="e:&#x2F;文档中心&#x2F;CTF&#x2F;writeup&#x2F;图片&#x2F;babyflash-2.PNG">
+<meta property="og:image" content="e:&#x2F;文档中心&#x2F;CTF&#x2F;writeup&#x2F;图片&#x2F;babyflash-3.PNG">
+<meta property="og:image" content="e:&#x2F;文档中心&#x2F;CTF&#x2F;writeup&#x2F;图片&#x2F;otaku-1.PNG">
+<meta property="og:image" content="e:&#x2F;文档中心&#x2F;CTF&#x2F;writeup&#x2F;图片&#x2F;otaku-2.PNG">
+<meta property="og:image" content="e:&#x2F;文档中心&#x2F;CTF&#x2F;writeup&#x2F;图片&#x2F;otaku-3.PNG">
+<meta property="og:image" content="e:&#x2F;文档中心&#x2F;CTF&#x2F;@ctf&#x2F;misc&#x2F;82598457d27f4149a96e2cc38f49c873&#x2F;捕获.PNG">
+<meta property="og:updated_time" content="2019-10-29T11:33:12.044Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="e:&#x2F;文档中心&#x2F;CTF&#x2F;writeup&#x2F;图片&#x2F;babyflash-1.PNG">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/DDD428LOGO.png)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/ddd428.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">hgh</h5>
+          <a href="mailto:1950771661@qq.com" target="_blank" rel="noopener" title="1950771661@qq.com" class="mail">1950771661@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/hghhgghhg" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">\*CTF2019----Writeup</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">\*CTF2019----Writeup</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-04-30T09:46:53.000Z" itemprop="datePublished" class="page-time">
+  2019-04-30
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#misc"><span class="post-toc-number">1.</span> <span class="post-toc-text">misc</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#babyflash"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">babyflash</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Description"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">Description</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Analyze"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">Analyze</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Solve"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">Solve</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#otaku"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">otaku</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Description-1"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">Description</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Hint"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">Hint</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Analyze-1"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">Analyze</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Solve-1"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">Solve</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-CTF2019----Writeup"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">\*CTF2019----Writeup</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-04-30 17:46:53" datetime="2019-04-30T09:46:53.000Z"  itemprop="datePublished">2019-04-30</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="misc"><a href="#misc" class="headerlink" title="misc"></a>misc</h2><h3 id="babyflash"><a href="#babyflash" class="headerlink" title="babyflash"></a>babyflash</h3><h4 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h4><p>​    Recently my younger brother learnt how to make a flash. Here’s his first work.</p>
+<p>​        File:  823081f554a741199bec9a03c2653df0.zip(里面有一个swf文件)</p>
+<h4 id="Analyze"><a href="#Analyze" class="headerlink" title="Analyze"></a>Analyze</h4><p>1.swf文件分离</p>
+<p>2.MP3文件隐写</p>
+<p>3.将二进制流转化为二维码</p>
+<p>详细分析：</p>
+<p>1.使用<strong>SWF提取器</strong>对swf文件进行提取（注意：由于我是随便在一个网站上，下载的工具，不敢在宿主机里面进行操作，所以我将软件下载并丢到windows XP虚拟机上进行操作），操作结果：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="E:\文档中心\CTF\writeup\图片\babyflash-1.PNG" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>发现——一个MP3文件，441个png文件（441 = 21 * 21，这个很关键），将MP3文件导出（图片不要，这个后面会讲解）。</p>
+<p>2.对MP3文件进行操作，这个是一个老套路，在其他ctf比赛上出现过。</p>
+<p>操作方法：使用Audacity打开MP3文件，查看<strong>频谱图</strong>，发现：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="E:\文档中心\CTF\@ctf\misc\823081f554a741199bec9a03c2653df0\flash\flash.PNG" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>获得后半个flag：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&amp;_the_rest&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>3.既然得到了后半个flag，那么剩下的半个flag一定是隐藏在png图片里面了。</p>
+<p>失败的尝试：将所有png图片导出，进行比对，发现内容一模一样。。。。此路不通</p>
+<p>成功的操作：仔细看png文件的数量，为441，是一个平方数，由此想到二维码。但是二维码需要黑白数据（1、0数据流）,但到底在哪呢？通过队友提醒，发现：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="E:\文档中心\CTF\writeup\图片\babyflash-2.PNG" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>这个不正是我们要找数据流吗！</p>
+<p>但现在问题是怎么把441个数据拿下来————————由于水平问题，我是手动录下来的，尴尬。。。</p>
+<p>然后就是怎么把二进制流转换为黑白网格？</p>
+<p>我的操作方法：使用matlab————里面集成好了生成黑白格子的操作</p>
+<p>然后就可以生成二维码了</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="E:\文档中心\CTF\writeup\图片\babyflash-3.PNG" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>前半个flag：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*ctf&#123;half_flag_&amp;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Solve"><a href="#Solve" class="headerlink" title="Solve"></a>Solve</h4><p>matlab脚本：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">clear all;close all;clc</span><br><span class="line"></span><br><span class="line">flag=[<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>]</span><br><span class="line">h=<span class="number">21</span>;</span><br><span class="line">w=<span class="number">21</span>;</span><br><span class="line">n=<span class="number">21</span>;</span><br><span class="line">img=<span class="built_in">zeros</span>(h,w);</span><br><span class="line">count=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span> y=<span class="number">1</span>:h</span><br><span class="line">    <span class="keyword">for</span> x=<span class="number">1</span>:w</span><br><span class="line">        <span class="keyword">if</span> flag(count)==<span class="number">1</span></span><br><span class="line">            img(y,x)=<span class="number">3</span>;</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">		count =count+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    </span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">imshow(img)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>flag:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*ctf&#123;half_flag_&amp;&amp;_the_rest&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="otaku"><a href="#otaku" class="headerlink" title="otaku"></a>otaku</h3><h4 id="Description-1"><a href="#Description-1" class="headerlink" title="Description"></a>Description</h4><p>​    One day, you and your otaku friend went to the comic expo together and he had a car accident right beside you. Before he died, he gave you a USB hard disk which contained this zip. Please find out his last wish.</p>
+<p>​        File:  82598457d27f4149a96e2cc38f49c873.zip</p>
+<h4 id="Hint"><a href="#Hint" class="headerlink" title="Hint"></a>Hint</h4><p><strong><em>The txt is GBK encoding.</em></strong></p>
+<h4 id="Analyze-1"><a href="#Analyze-1" class="headerlink" title="Analyze"></a>Analyze</h4><p>1.</p>
+<p>2.zip明文攻击</p>
+<p>3.png图片lsb隐写（RGB)</p>
+<p>详细分析：</p>
+<p>1.使用notepad++（或者其他16进制查看器）打开题目文件，查看文件头：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="E:\文档中心\CTF\writeup\图片\otaku-1.PNG" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>得出结论，zip文件没有加密，但直接解压文件需要密码，所以是伪加密，可以采用上面zip伪加密链接里面的方式进行破解。</p>
+<p>解压成功，得Anime_Intro.doc和flag.zip</p>
+<p>2.尝试解压flag.zip（里面有 <strong><em>last word.txt</em></strong> 和 <strong><em>flag.png</em></strong> 两个文件），发现要密码。</p>
+<p>flag.zip里面有注释：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">压缩软件：winrar版本 5.70 beta 2</span><br><span class="line">配置：zip压缩文件（低压缩率）</span><br><span class="line">压缩方式：标准</span><br></pre></td></tr></table></figure>
+
+<p>且重复步骤1，发现不是伪加密。尝试数字爆破，弱口令爆破，无解。打开Anime_Intro.doc文件，一篇英文。由于英语6级还没有过，不得已复制出来贴到翻译工具里面，如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Violet is a soldier in the Leidenschaftlich Army who served under Major Gilbert Bougainvillea, who she was utterly devoted to. However, Violet is injured after a mission which resulted in the loss of her arms, requiring them to be replaced with prosthesis. Colonel Hodgins, an old acquaintance of Gilbert, arrives to pick up Violet. He explains to Violet that the war they were fighting has ended and peace has come, though he is unwilling to tell Violet what happened to Gilbert. They leave for the capital city of Leiden, where Gilbert had already arranged for Violet to be adopted by the Evergarden family. However, Violet cannot adjust to civilian life due to her military indoctrination. Hodgins then decides to show Violet his business, the CH postal company which acts as a private mail and ghostwriting service and hires her as a postal worker. She then witnesses the Auto Memory Dolls of the ghostwriting department writing a letter for an illiterate man who wants to proclaim his love to someone. Violet then remembers that &quot;I love you &quot; were the last words Gilbert I-the-almighty-quiz-maker had told her. Wanting to know the meaning of the words, Violet asks Hodgins for her to join the ghostwriting department. Impressed that Violet has finally shown signs of acting on her own free will instead of on someone else&apos;s orders, Hodgins accepts Violet&apos;s request despite her not being an Auto Memory Doll.</span><br></pre></td></tr></table></figure>
+
+<p>注意里面的<strong>“I love you”</strong>字段，因为和原文不一样，原文：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="E:\文档中心\CTF\writeup\图片\otaku-2.PNG" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>回到上面提到，flag.zip里面有一个文件<strong><em>last words.txt</em></strong>，还有提示<strong><em>The txt is GBK encoding.</em></strong>，大胆猜测是明文攻击，攻击字段就是<strong>“I love you”</strong>对应的段落，结合提示制作出<strong><em>last words.txt</em></strong>，然后根据题目是使用压缩工具（根据flag.zip注释知道是<strong>winrar</strong>）对<strong><em>last words.txt</em></strong>进行压缩(细节比如要不要引号之类，需要自己去测试，最终结果要使得zip里面的<strong>crc32</strong>与flag.zip里面的相同)</p>
+<p>crc32：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ZA066FEC</span><br></pre></td></tr></table></figure>
+
+<p>last words.txt：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello everyone, I am Gilbert. Everyone thought that I was killed, but actually I survived. Now that I have no cash with me and I’m trapped in another country. I can&apos;t contact Violet now. She must be desperate to see me and I don&apos;t want her to cry for me. I need to pay 300 for the train, and 88 for the meal. Cash or battlenet point are both accepted. I don&apos;t play the Hearthstone, and I don&apos;t even know what is Rastakhan&apos;s Rumble.</span><br></pre></td></tr></table></figure>
+
+<p>进行明文攻击，使用工具ARCHPR即可，最终结果：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="E:\文档中心\CTF\writeup\图片\otaku-3.PNG" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>使用此密码解压flag.zip文件，得flag.png文件。</p>
+<p>3.使用图片三原色分析神器Stegsolve，打开图片，lsb隐写套路，如图：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="E:\文档中心\CTF\@ctf\misc\82598457d27f4149a96e2cc38f49c873\捕获.PNG" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+
+
+<h4 id="Solve-1"><a href="#Solve-1" class="headerlink" title="Solve"></a>Solve</h4><p>flag:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*ctf&#123;vI0l3t_Ev3rg@RdeN&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-10-29T11:33:12.044Z" itemprop="dateUpdated">2019-10-29 19:33:12</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/04/30/CTF2019----Writeup/" target="_blank" rel="external">http://localhost:4000/2019/04/30/CTF2019----Writeup/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://localhost:4000">
+            <img src="/img/ddd428.png" alt="hgh">
+            hgh
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/writeup/" rel="tag">writeup</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://localhost:4000/2019/04/30/CTF2019----Writeup/&title=《\*CTF2019----Writeup》 — hghhgghhg&pic=http://localhost:4000/img/ddd428.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://localhost:4000/2019/04/30/CTF2019----Writeup/&title=《\*CTF2019----Writeup》 — hghhgghhg&source=hghhgghhg blog" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2019/04/30/CTF2019----Writeup/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《\*CTF2019----Writeup》 — hghhgghhg&url=http://localhost:4000/2019/04/30/CTF2019----Writeup/&via=http://localhost:4000" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://localhost:4000/2019/04/30/CTF2019----Writeup/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/05/21/RCTF2019%E2%80%94%E2%80%94WriteUp/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">RCTF2019——WriteUp</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/03/30/%E5%98%89%E9%9F%A6%E6%80%9D%E6%9D%AF--Writeup/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">嘉韦思杯 2019</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>hgh &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://localhost:4000/2019/04/30/CTF2019----Writeup/&title=《\*CTF2019----Writeup》 — hghhgghhg&pic=http://localhost:4000/img/ddd428.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://localhost:4000/2019/04/30/CTF2019----Writeup/&title=《\*CTF2019----Writeup》 — hghhgghhg&source=hghhgghhg blog" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2019/04/30/CTF2019----Writeup/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《\*CTF2019----Writeup》 — hghhgghhg&url=http://localhost:4000/2019/04/30/CTF2019----Writeup/&via=http://localhost:4000" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://localhost:4000/2019/04/30/CTF2019----Writeup/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://localhost:4000/2019/04/30/CTF2019----Writeup/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'Come here!!!';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Welcome to hgh's blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
