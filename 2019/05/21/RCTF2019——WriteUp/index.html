@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>RCTF2019——WriteUp | hghhgghhg | CTF is funny!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="writeup">
+    <meta name="description" content="miscdrawDescription12345I&amp;apos;m god&amp;apos;s child.Flag format: RCTF_[A-Za-z]cs pu lt 90 fd 500 rt 90 pd fd 100 rt 90 repeat 18[fd 5 rt 10] lt 135 fd 50 lt 135 pu bk 100 pd setcolor pick [ red orange y">
+<meta name="keywords" content="writeup">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RCTF2019——WriteUp">
+<meta property="og:url" content="http:&#x2F;&#x2F;localhost:4000&#x2F;2019&#x2F;05&#x2F;21&#x2F;RCTF2019%E2%80%94%E2%80%94WriteUp&#x2F;index.html">
+<meta property="og:site_name" content="hghhgghhg">
+<meta property="og:description" content="miscdrawDescription12345I&amp;apos;m god&amp;apos;s child.Flag format: RCTF_[A-Za-z]cs pu lt 90 fd 500 rt 90 pd fd 100 rt 90 repeat 18[fd 5 rt 10] lt 135 fd 50 lt 135 pu bk 100 pd setcolor pick [ red orange y">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="d:&#x2F;python&#x2F;python2&#x2F;python2&#x2F;print.jpg">
+<meta property="og:image" content="e:&#x2F;文档中心&#x2F;印象图片&#x2F;2.PNG">
+<meta property="og:updated_time" content="2019-10-29T11:21:54.834Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="d:&#x2F;python&#x2F;python2&#x2F;python2&#x2F;print.jpg">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/DDD428LOGO.png)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/ddd428.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">hgh</h5>
+          <a href="mailto:1950771661@qq.com" target="_blank" rel="noopener" title="1950771661@qq.com" class="mail">1950771661@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/hghhgghhg" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">RCTF2019——WriteUp</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">RCTF2019——WriteUp</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-05-21T01:07:37.000Z" itemprop="datePublished" class="page-time">
+  2019-05-21
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#misc"><span class="post-toc-number">1.</span> <span class="post-toc-text">misc</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#draw"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">draw</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Description"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">Description</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Solution"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">Solution</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#printer"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">printer</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Description-1"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">Description</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Solution-1"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">Solution</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#draw-1"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">draw</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Description-2"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">Description</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Solution-2"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">Solution</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#crypto"><span class="post-toc-number">2.</span> <span class="post-toc-text">crypto</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#draw-2"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">draw</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Description-3"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">Description</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Solution-3"><span class="post-toc-number">2.1.2.</span> <span class="post-toc-text">Solution</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-RCTF2019——WriteUp"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">RCTF2019——WriteUp</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-05-21 09:07:37" datetime="2019-05-21T01:07:37.000Z"  itemprop="datePublished">2019-05-21</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="misc"><a href="#misc" class="headerlink" title="misc"></a>misc</h2><h3 id="draw"><a href="#draw" class="headerlink" title="draw"></a>draw</h3><h4 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">I&apos;m god&apos;s child.</span><br><span class="line"></span><br><span class="line">Flag format: RCTF_[A-Za-z]</span><br><span class="line"></span><br><span class="line">cs pu lt 90 fd 500 rt 90 pd fd 100 rt 90 repeat 18[fd 5 rt 10] lt 135 fd 50 lt 135 pu bk 100 pd setcolor pick [ red orange yellow green blue violet ] repeat 18[fd 5 rt 10] rt 90 fd 60 rt 90 bk 30 rt 90 fd 60 pu lt 90 fd 100 pd rt 90 fd 50 bk 50 setcolor pick [ red orange yellow green blue violet ] lt 90 fd 50 rt 90 fd 50 pu fd 50 pd fd 25 bk 50 fd 25 rt 90 fd 50 pu setcolor pick [ red orange yellow green blue violet ] fd 100 rt 90 fd 30 rt 45 pd fd 50 bk 50 rt 90 fd 50 bk 100 fd 50 rt 45 pu fd 50 lt 90 pd fd 50 bk 50 rt 90 setcolor pick [ red orange yellow green blue violet ] fd 50 pu lt 90 fd 100 pd fd 50 rt 90 fd 25 bk 25 lt 90 bk 25 rt 90 fd 25 setcolor pick [ red orange yellow green blue violet ] pu fd 25 lt 90 bk 30 pd rt 90 fd 25 pu fd 25 lt 90 pd fd 50 bk 25 rt 90 fd 25 lt 90 fd 25 bk 50 pu bk 100 lt 90 setcolor pick [ red orange yellow green blue violet ] fd 100 pd rt 90 arc 360 20 pu rt 90 fd 50 pd arc 360 15 pu fd 15 setcolor pick [ red orange yellow green blue violet ] lt 90 pd bk 50 lt 90 fd 25 pu home bk 100 lt 90 fd 100 pd arc 360 20 pu home</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h4><p>谷歌<code>cs pu lt 90 fd 500 rt 90 pd fd</code></p>
+<p>得到<a href="https://www.transum.org/Software/Logo/Level2/Default.asp?Level=3" target="_blank" rel="noopener">在线logo网站</a></p>
+<p>flag：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RCTF_HeyLogo</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="printer"><a href="#printer" class="headerlink" title="printer"></a>printer</h3><h4 id="Description-1"><a href="#Description-1" class="headerlink" title="Description"></a>Description</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The supermarket bought a new printer last night. I hacked into their computer and captured the USB traffic on it. Could you help me steal the secret?</span><br><span class="line"></span><br><span class="line">Flag format: flag&#123;0-9a-z_&#125; (Convert uppercase to lowercase)</span><br></pre></td></tr></table></figure>
+
+<p>file：</p>
+<h4 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution"></a>Solution</h4><p>处理printer.pcapng文件都是USB协议，直接提取<code>left capture data</code>段的数据：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tshark printer.pcapng -T fields -e usb.capdata &gt; print.txt</span><br></pre></td></tr></table></figure>
+
+<p>发现：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">0000010001000000</span><br><span class="line">0000000001000000</span><br><span class="line">0000010001000000</span><br><span class="line">00000000ffff0000</span><br><span class="line">0000fefffdff0000</span><br><span class="line">0000ffff00000000</span><br><span class="line">0000fefffeff0000</span><br><span class="line">0000f7fff9ff0000</span><br><span class="line">0000f9fff9ff0000</span><br><span class="line">0000fafffaff0000</span><br><span class="line">0000f9fffaff0000</span><br><span class="line">0000fafff9ff0000</span><br><span class="line">0000fcfffcff0000</span><br></pre></td></tr></table></figure>
+
+<p>8字节，明显的键盘流量，<a href="https://blog.csdn.net/u013771867/article/details/51465193" target="_blank" rel="noopener">键盘映射表</a></p>
+<p>可以使用脚本解析流量：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">mappings = &#123; <span class="number">0x04</span>:<span class="string">"A"</span>,  <span class="number">0x05</span>:<span class="string">"B"</span>,  <span class="number">0x06</span>:<span class="string">"C"</span>, <span class="number">0x07</span>:<span class="string">"D"</span>, <span class="number">0x08</span>:<span class="string">"E"</span>, <span class="number">0x09</span>:<span class="string">"F"</span>, <span class="number">0x0A</span>:<span class="string">"G"</span>,  <span class="number">0x0B</span>:<span class="string">"H"</span>, <span class="number">0x0C</span>:<span class="string">"I"</span>,  <span class="number">0x0D</span>:<span class="string">"J"</span>, <span class="number">0x0E</span>:<span class="string">"K"</span>, <span class="number">0x0F</span>:<span class="string">"L"</span>, <span class="number">0x10</span>:<span class="string">"M"</span>, <span class="number">0x11</span>:<span class="string">"N"</span>,<span class="number">0x12</span>:<span class="string">"O"</span>,  <span class="number">0x13</span>:<span class="string">"P"</span>, <span class="number">0x14</span>:<span class="string">"Q"</span>, <span class="number">0x15</span>:<span class="string">"R"</span>, <span class="number">0x16</span>:<span class="string">"S"</span>, <span class="number">0x17</span>:<span class="string">"T"</span>, <span class="number">0x18</span>:<span class="string">"U"</span>,<span class="number">0x19</span>:<span class="string">"V"</span>, <span class="number">0x1A</span>:<span class="string">"W"</span>, <span class="number">0x1B</span>:<span class="string">"X"</span>, <span class="number">0x1C</span>:<span class="string">"Y"</span>, <span class="number">0x1D</span>:<span class="string">"Z"</span>, <span class="number">0x1E</span>:<span class="string">"1"</span>, <span class="number">0x1F</span>:<span class="string">"2"</span>, <span class="number">0x20</span>:<span class="string">"3"</span>, <span class="number">0x21</span>:<span class="string">"4"</span>, <span class="number">0x22</span>:<span class="string">"5"</span>,  <span class="number">0x23</span>:<span class="string">"6"</span>, <span class="number">0x24</span>:<span class="string">"7"</span>, <span class="number">0x25</span>:<span class="string">"8"</span>, <span class="number">0x26</span>:<span class="string">"9"</span>, <span class="number">0x27</span>:<span class="string">"0"</span>, <span class="number">0x28</span>:<span class="string">"\n"</span>, <span class="number">0x2a</span>:<span class="string">"[DEL]"</span>,  <span class="number">0X2B</span>:<span class="string">"    "</span>, <span class="number">0x2C</span>:<span class="string">" "</span>,  <span class="number">0x2D</span>:<span class="string">"-"</span>, <span class="number">0x2E</span>:<span class="string">"="</span>, <span class="number">0x2F</span>:<span class="string">"["</span>,  <span class="number">0x30</span>:<span class="string">"]"</span>,  <span class="number">0x31</span>:<span class="string">"\\"</span>, <span class="number">0x32</span>:<span class="string">"~"</span>, <span class="number">0x33</span>:<span class="string">";"</span>,  <span class="number">0x34</span>:<span class="string">"'"</span>, <span class="number">0x36</span>:<span class="string">","</span>,  <span class="number">0x37</span>:<span class="string">"."</span> &#125;</span><br><span class="line">nums = []</span><br><span class="line">nums2 = []</span><br><span class="line">nums3 = []</span><br><span class="line">nums4 = []</span><br><span class="line">keys = open(<span class="string">'print.txt'</span>)</span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> keys:</span><br><span class="line">    <span class="keyword">if</span> line[<span class="number">2</span>:<span class="number">4</span>] != <span class="string">'00'</span>:</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    nums.append(int(line[<span class="number">4</span>:<span class="number">6</span>],<span class="number">16</span>))</span><br><span class="line">    nums2.append(int(line[<span class="number">6</span>:<span class="number">8</span>],<span class="number">16</span>))</span><br><span class="line">    nums3.append(int(line[<span class="number">8</span>:<span class="number">10</span>],<span class="number">16</span>))</span><br><span class="line">    nums4.append(int(line[<span class="number">10</span>:<span class="number">12</span>],<span class="number">16</span>))</span><br><span class="line">keys.close()</span><br><span class="line">output = <span class="string">""</span></span><br><span class="line">print(nums)</span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> nums:</span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">0</span> :</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    <span class="keyword">if</span> n <span class="keyword">in</span> mappings:</span><br><span class="line">        output += mappings[n]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        output += <span class="string">''</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">'output :\n'</span> + output + <span class="string">'\n'</span></span><br><span class="line">output = <span class="string">""</span></span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> nums2:</span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">0</span> :</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    <span class="keyword">if</span> n <span class="keyword">in</span> mappings:</span><br><span class="line">        output += mappings[n]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        output += <span class="string">''</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">'output :\n'</span> + output + <span class="string">'\n'</span></span><br><span class="line">output = <span class="string">""</span></span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> nums3:</span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">0</span> :</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    <span class="keyword">if</span> n <span class="keyword">in</span> mappings:</span><br><span class="line">        output += mappings[n]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        output += <span class="string">''</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">'output :\n'</span> + output + <span class="string">'\n'</span></span><br><span class="line">output = <span class="string">""</span></span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> nums4:</span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">0</span> :</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    <span class="keyword">if</span> n <span class="keyword">in</span> mappings:</span><br><span class="line">        output += mappings[n]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        output += <span class="string">''</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">'output :\n'</span> + output + <span class="string">'\n'</span></span><br></pre></td></tr></table></figure>
+
+<p>没有什么有效信息…..</p>
+<p>但是仔细一点可以发现里面还有几行很长的字节流：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">53495a452034372e35206d6d2c2038302e31206d6d0d0a4741502033206d6d2c2030206d6d0d0a444952454354494f4e20302c300d0a5245464552454e434520302c300d0a4f46465345542030206d6d0d0a534554205045454c204f46460d0a53455420435554544552204f46460d0a534554205041525449414c5f435554544552204f46460d0a</span><br><span class="line">5345542054454152204f4e0d0a434c530d0a4249544d4150203133382c37352c32362c34382c312cffffffffffffffffffffffffffffffff00ffffffffffffffffffffffffffffffffffffffffffffffffffc3ffffffffffffffffffffffffffffffffffffffffffffffffffe7ffffffffffffffffffffffffffffffffffffffffffffffffffe7ffffffffffffffffffffffffffffffffffffffffffffffffffe7ffffffffffffffffffffffffffffffffffffffffffffffffffe7ffffffffffffffffffffffffffffffffffffffffffffffffffe7ffe3fffe1ffffffffff807c03c603fc07c07e0007f7ff01f8067ff007ff803fc07c03fff1ff1f04f8ff1ff1fff1fff3ffcff1f27fc7f1ff3e1ff1ff9ffff1ff1fc1fcff8ff1fff1fff3ffefe3f87f8ff9feff8ff1ff9ffff8ff1fc3fc7fcff1fff1fff1ffefc7fc7f9ff8fdffc7f1ff9ffff8ff1fc7fe3fc7f1fff1fff1ffefcffe7f1ff8f9ffc3f1ff9ffffc7f1fc7fe3fe3f1fff1fff0ffef8ffe7f1ff0fbffe3f1ff9ffffc7f1fc7fe3fe3f1fff1fff0ffef8ffe7e1ff8f3ffe3f1ff9ffffe3f1fc7fe3ff1f1fff1fff47fef8ffe7e3ff9f7ffe1f1ff9ffffe3f1fc7ff3ff8e1fff1fff47fef9ffe7e3ffffffff1f1ff9fffff1f1fc7ff3ff8c1fff1fff63fef9ffe7f1ffffffff1f1ff9fffff1f1fc7ff3ffc11fff1fff63fef9ffe7f1ffffffff1f1ff9fffff1f1fc7fe3ffe31fff1fff71fef9ffe7f1ffffffff1f1ff9fffff8f1fc7fe3ffe71fff1fff71fef8ffe7f8ffffffff0f1ff9fffff8f1fc7fe3ffcf1fff1fff78fef8ffe7fcffffffff0f1ff9fffffc61fc7fe7ff9f1fff1fff78fef8ffc7fe3fffffff0f1ff9fffffc41fc7fc7ff3f1fff1fff7c7efcffc7ff83ffffff0f9ff1fffffe11fc3f8fff7f1fff1fff7c7efc7fa7ff87ffffff0f9fe9fffffe31fc1f1ffe7f1fff1fff7e3efe3e67fe3fffffff1f8f99ffffff31fc403fe01f1fff1fff7e3eff80e0fc7fffffff1fc039fffffe71fc79ffffff1fff1fff7f1efff3eff8ffffffff1ff0f9fffffef1fc7fffffff1fff1fff7f0efffffff8ffffffff1ffff9fffffcf1fc7fffffff1fff1fff7f8efffffff8fffffffe1ffff9fffff9f1fc7fffffff1fff1fff7f86fffffff8ff9f7ffe3ffff9fffffbf1fc7fffffff1fff1fff7fc6fffffff8ff0f3ffe3ffff9fffff7f1fc7fffffff1fff1fff7fc2fffffff8ff8fbffc7ffff9ffffe7f1fc7fffffff1fff1fff7fe2fffffff8ff8f9ffc7ffff9ffffcff1fc7fffffff1fff1fff7ff0fffffffcff9f9ff8fffff9ffff8ff1fc7fffffff1fff1fff7ff0fffffffc7f9f8ff1fffff9ffff0ff0fc3fffffff1fff0ffe7ff8fffffffe1e7f83e3fffff8fffc03c03c0fffffff03e000780ff83fffffff80fff80ffffff83ffffffffdffffffff3ffffffffffffffffffffffffffffffffbffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0d0a4249544d4150203133302c3537392c32392c33322c312cffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc7fffffffffffffffffffffffffffffffffffffffffffffffffffffffe38fffffffffffffffffffffffffffffffffffffffffffffffffffffffdff7ffffffffffffffffffffffffffffffffffffffffffffffffffffff9ff3ffffffffffffffffffffffffffffffffffffffffffffffffffffff9ff3fffffffffffff9ffefbffc7ffffffe1fff8fffffffc3ffffffffff9ff3ff8ffffffffff0ffefbff39ff007f9c7fe72ffffff3c3fc07fffff87e78463f803ff01f0ffe7bfefefff7ff3f3f9f8fffffeff3ffbffffffc01fa3f9ffbfffe7f9ffe71fcfe7ff7ff7f9f9fcfffffeffbffbfffffffc07e7f9ffbfffe7ffffc71f9ff3ff7feff9f3fcfffffeffbffbffffffffe7e7f8ffbfffe7ffffd75f9ff3ff7ffffcf3fcfffffe7ffffbffffffffe7e7f9ffbfffe7ffffd35f9ff3ff7ffffcf3fcfffffe3ffffbfffffff80fe7f9ffbfffe7ffffd2cf9ff3ff7ffffcf3fcffffff07fffbfffffff7cfe7f3ffbfffe7ffffb2cf9ff3ff7fe000f3fcffffffc1fffbffffffe7e7e7c7ffbfffe7ffffbacf9ff3ff7fe7fcf3fcfffffff87ffbffffffe7e7e03fffbfffe7ffffb9ef9ff3ff7fe7fcf3fcfffffffe7ffbffffffefe7e7ffffbfffe7ffffb9e79ff3ff7fe7f9f3fcfffffeff3ffbffffffefe7e7f9ffbfffe7ffff79e7cfe7ff7ff3f9f9f8fffffeff3ffbffffffe7e7f7f1ffbfffe7f1ff79e7efcfff7ff3f3f9f0fffffe7f7ffbffffff27eff3f3ffbfffe7f0fe38e3f39fff7ffce7fc04fffffe1cfff9ffffff019ff9e7ffbfffe7f1fffffffc7fff7fff1fffbcfffffee3fff87fffffbe7ffe1fffbffe00ffffffffffffff7ffffffffcffffffffffffffffffffffffffffbfffe7ffffffffffffff7ffffffffcffffffffffffffffffffffffffffbfffe7ffffffffffffff7ffffffffcffffffffffffffffffffffffffffbfffe7ffffffffffffff7ffffffffcffffffffffffffffffffffffffffbfe7e7ffffffffffffff7ffffffffcfffffffffff3ffffffffffffffffbfe7efffffffffffffff7ffffffffcfffffffffff1ffffffffffffffffbfe7cfffffffffffffff03fffffffc3ffffffffff1ffffffffffffffff81f03fffffffffffffff3ffffffffcfffffffffffbffffffffffffffff9ffffff0d0a424152203334382c203433392c20322c2039360d0a424152203239322c203533352c2035362c20320d0a424152203330302c203439352c2034382c20320d0a424152203236302c203434372c20322c2038380d0a424152203230342c203434372c2035362c20320d0a424152203137362c203434372c20322c2039360d0a424152203131362c203435352c20322c2038320d0a424152203132302c203437392c2035362c20320d0a4241522034342c203533352c2034382c20320d0a4241522039322c203435352c20322c2038300d0a4241522032302c203435352c2037322c20320d0a4241522032312c203435352c20322c2034300d0a4241522032312c203439352c2032342c20320d0a4241522034352c203437392c20322c2031360d0a4241522033362c203437392c2031362c20320d0a424152203238342c203339312c2034302c20320d0a424152203332342c203334332c20322c2034380d0a424152203332342c203238372c20322c2033320d0a424152203237362c203238372c2034382c20320d0a4241522035322c203331312c2034382c20320d0a424152203238342c203233392c2034382c20320d0a424152203330382c203138332c20322c2035360d0a424152203134382c203233392c2034382c20320d0a424152203139362c203139312c20322c2034380d0a424152203134382c203139312c2034382c20320d0a4241522036382c203139312c2034382c20320d0a4241522037362c203135312c2034302c20320d0a4241522037362c203131392c20322c2033320d0a4241522037362c2035352c20322c2033320d0a4241522037362c2035352c2034382c20320d0a424152203131322c203533352c2036342c20320d0a424152203332302c203334332c2031362c20320d0a424152203332302c203331392c2031362c20320d0a424152203333362c203331392c20322c2032340d0a4241522035362c203132302c2032342c20320d0a4241522035362c2038372c2032342c20320d0a4241522035362c2038382c20322c2033320d0a424152203232342c203234372c2033322c20320d0a424152203235362c203231352c20322c2033320d0a424152203232342c203231352c2033322c20320d0a424152203232342c203138342c20322c2033320d0a424152203232342c203139312c2033322c20320d0a424152203237322c203331312c20322c2035360d0a424152203231362c203336372c2035362c20320d0a424152203231362c203331392c20322c2034380d0a424152203234302c203331382c20322c2034390d0a424152203138342c203335312c20322c2031360d0a424152203136382c203335312c2031362c20320d0a424152203136382c203331312c20322c2034300d0a424152203135322c203335312c2031362c20320d0a424152203135322c203335312c20322c2031360d0a5052494e5420312c310d0a</span><br></pre></td></tr></table></figure>
+
+<p>将其转换为ASCII:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">SIZE 47.5 mm, 80.1 mm</span><br><span class="line">GAP 3 mm, 0 mm</span><br><span class="line">DIRECTION 0,0</span><br><span class="line">REFERENCE 0,0</span><br><span class="line">OFFSET 0 mm</span><br><span class="line">SET PEEL OFF</span><br><span class="line">SET CUTTER OFF</span><br><span class="line">SET PARTIAL_CUTTER OFF</span><br><span class="line">SET TEAR ON</span><br><span class="line">CLS</span><br><span class="line">BITMAP 138,75,26,48,1,一堆ff</span><br><span class="line">BITMAP 130,579,29,32,1,一堆ff</span><br><span class="line">BAR 348, 439, 2, 96</span><br><span class="line">BAR 292, 535, 56, 2</span><br><span class="line">BAR 300, 495, 48, 2</span><br><span class="line">BAR 260, 447, 2, 88</span><br><span class="line">BAR 204, 447, 56, 2</span><br><span class="line">BAR 176, 447, 2, 96</span><br><span class="line">BAR 116, 455, 2, 82</span><br><span class="line">BAR 120, 479, 56, 2</span><br><span class="line">BAR 44, 535, 48, 2</span><br><span class="line">BAR 92, 455, 2, 80</span><br><span class="line">BAR 20, 455, 72, 2</span><br><span class="line">BAR 21, 455, 2, 40</span><br><span class="line">BAR 21, 495, 24, 2</span><br><span class="line">BAR 45, 479, 2, 16</span><br><span class="line">BAR 36, 479, 16, 2</span><br><span class="line">BAR 284, 391, 40, 2</span><br><span class="line">BAR 324, 343, 2, 48</span><br><span class="line">BAR 324, 287, 2, 32</span><br><span class="line">BAR 276, 287, 48, 2</span><br><span class="line">BAR 52, 311, 48, 2</span><br><span class="line">BAR 284, 239, 48, 2</span><br><span class="line">BAR 308, 183, 2, 56</span><br><span class="line">BAR 148, 239, 48, 2</span><br><span class="line">BAR 196, 191, 2, 48</span><br><span class="line">BAR 148, 191, 48, 2</span><br><span class="line">BAR 68, 191, 48, 2</span><br><span class="line">BAR 76, 151, 40, 2</span><br><span class="line">BAR 76, 119, 2, 32</span><br><span class="line">BAR 76, 55, 2, 32</span><br><span class="line">BAR 76, 55, 48, 2</span><br><span class="line">BAR 112, 535, 64, 2</span><br><span class="line">BAR 320, 343, 16, 2</span><br><span class="line">BAR 320, 319, 16, 2</span><br><span class="line">BAR 336, 319, 2, 24</span><br><span class="line">BAR 56, 120, 24, 2</span><br><span class="line">BAR 56, 87, 24, 2</span><br><span class="line">BAR 56, 88, 2, 32</span><br><span class="line">BAR 224, 247, 32, 2</span><br><span class="line">BAR 256, 215, 2, 32</span><br><span class="line">BAR 224, 215, 32, 2</span><br><span class="line">BAR 224, 184, 2, 32</span><br><span class="line">BAR 224, 191, 32, 2</span><br><span class="line">BAR 272, 311, 2, 56</span><br><span class="line">BAR 216, 367, 56, 2</span><br><span class="line">BAR 216, 319, 2, 48</span><br><span class="line">BAR 240, 318, 2, 49</span><br><span class="line">BAR 184, 351, 2, 16</span><br><span class="line">BAR 168, 351, 16, 2</span><br><span class="line">BAR 168, 311, 2, 40</span><br><span class="line">BAR 152, 351, 16, 2</span><br><span class="line">BAR 152, 351, 2, 16</span><br><span class="line">PRINT 1,1</span><br></pre></td></tr></table></figure>
+
+<p>在网上找到<a href="https://www.dobus.ru/pdf/programming-manual-for-ht300.pdf" target="_blank" rel="noopener">官方文档</a></p>
+<p>编写代码：</p>
+<p><code>Bar</code>部分：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line">canvas = np.zeros((<span class="number">800</span>, <span class="number">1000</span>, <span class="number">3</span>), dtype=<span class="string">"uint8"</span>)</span><br><span class="line">w = (<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>)</span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'s.txt'</span>, <span class="string">'r'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">100</span>):</span><br><span class="line">        rec = f.readline()</span><br><span class="line">        <span class="keyword">if</span> rec == <span class="string">''</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        match = re.findall(<span class="string">r'(\d+)'</span>, rec)</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">4</span>):</span><br><span class="line">            match[j] = int(match[j])</span><br><span class="line">        stx = match[<span class="number">0</span>]</span><br><span class="line">        sty = match[<span class="number">1</span>]</span><br><span class="line">        enx = match[<span class="number">0</span>] + match[<span class="number">2</span>]</span><br><span class="line">        eny = match[<span class="number">1</span>] + match[<span class="number">3</span>]</span><br><span class="line">        cv2.rectangle(canvas, (stx, sty), (enx, eny), w)</span><br><span class="line"></span><br><span class="line">cv2.imshow(<span class="string">"Canvas"</span>, canvas)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.imwrite(<span class="string">'print.jpg'</span>,canvas)</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="D:\python\python2\python2\print.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>Bitmap``部分：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line">s = <span class="string">"ffffffffffffffffffffffffffffffff00ffffffffffffffffffffffffffffffffffffffffffffffffffc3ffffffffffffffffffffffffffffffffffffffffffffffffffe7ffffffffffffffffffffffffffffffffffffffffffffffffffe7ffffffffffffffffffffffffffffffffffffffffffffffffffe7ffffffffffffffffffffffffffffffffffffffffffffffffffe7ffffffffffffffffffffffffffffffffffffffffffffffffffe7ffe3fffe1ffffffffff807c03c603fc07c07e0007f7ff01f8067ff007ff803fc07c03fff1ff1f04f8ff1ff1fff1fff3ffcff1f27fc7f1ff3e1ff1ff9ffff1ff1fc1fcff8ff1fff1fff3ffefe3f87f8ff9feff8ff1ff9ffff8ff1fc3fc7fcff1fff1fff1ffefc7fc7f9ff8fdffc7f1ff9ffff8ff1fc7fe3fc7f1fff1fff1ffefcffe7f1ff8f9ffc3f1ff9ffffc7f1fc7fe3fe3f1fff1fff0ffef8ffe7f1ff0fbffe3f1ff9ffffc7f1fc7fe3fe3f1fff1fff0ffef8ffe7e1ff8f3ffe3f1ff9ffffe3f1fc7fe3ff1f1fff1fff47fef8ffe7e3ff9f7ffe1f1ff9ffffe3f1fc7ff3ff8e1fff1fff47fef9ffe7e3ffffffff1f1ff9fffff1f1fc7ff3ff8c1fff1fff63fef9ffe7f1ffffffff1f1ff9fffff1f1fc7ff3ffc11fff1fff63fef9ffe7f1ffffffff1f1ff9fffff1f1fc7fe3ffe31fff1fff71fef9ffe7f1ffffffff1f1ff9fffff8f1fc7fe3ffe71fff1fff71fef8ffe7f8ffffffff0f1ff9fffff8f1fc7fe3ffcf1fff1fff78fef8ffe7fcffffffff0f1ff9fffffc61fc7fe7ff9f1fff1fff78fef8ffc7fe3fffffff0f1ff9fffffc41fc7fc7ff3f1fff1fff7c7efcffc7ff83ffffff0f9ff1fffffe11fc3f8fff7f1fff1fff7c7efc7fa7ff87ffffff0f9fe9fffffe31fc1f1ffe7f1fff1fff7e3efe3e67fe3fffffff1f8f99ffffff31fc403fe01f1fff1fff7e3eff80e0fc7fffffff1fc039fffffe71fc79ffffff1fff1fff7f1efff3eff8ffffffff1ff0f9fffffef1fc7fffffff1fff1fff7f0efffffff8ffffffff1ffff9fffffcf1fc7fffffff1fff1fff7f8efffffff8fffffffe1ffff9fffff9f1fc7fffffff1fff1fff7f86fffffff8ff9f7ffe3ffff9fffffbf1fc7fffffff1fff1fff7fc6fffffff8ff0f3ffe3ffff9fffff7f1fc7fffffff1fff1fff7fc2fffffff8ff8fbffc7ffff9ffffe7f1fc7fffffff1fff1fff7fe2fffffff8ff8f9ffc7ffff9ffffcff1fc7fffffff1fff1fff7ff0fffffffcff9f9ff8fffff9ffff8ff1fc7fffffff1fff1fff7ff0fffffffc7f9f8ff1fffff9ffff0ff0fc3fffffff1fff0ffe7ff8fffffffe1e7f83e3fffff8fffc03c03c0fffffff03e000780ff83fffffff80fff80ffffff83ffffffffdffffffff3ffffffffffffffffffffffffffffffffbffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span></span><br><span class="line">t = <span class="string">"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc7fffffffffffffffffffffffffffffffffffffffffffffffffffffffe38fffffffffffffffffffffffffffffffffffffffffffffffffffffffdff7ffffffffffffffffffffffffffffffffffffffffffffffffffffff9ff3ffffffffffffffffffffffffffffffffffffffffffffffffffffff9ff3fffffffffffff9ffefbffc7ffffffe1fff8fffffffc3ffffffffff9ff3ff8ffffffffff0ffefbff39ff007f9c7fe72ffffff3c3fc07fffff87e78463f803ff01f0ffe7bfefefff7ff3f3f9f8fffffeff3ffbffffffc01fa3f9ffbfffe7f9ffe71fcfe7ff7ff7f9f9fcfffffeffbffbfffffffc07e7f9ffbfffe7ffffc71f9ff3ff7feff9f3fcfffffeffbffbffffffffe7e7f8ffbfffe7ffffd75f9ff3ff7ffffcf3fcfffffe7ffffbffffffffe7e7f9ffbfffe7ffffd35f9ff3ff7ffffcf3fcfffffe3ffffbfffffff80fe7f9ffbfffe7ffffd2cf9ff3ff7ffffcf3fcffffff07fffbfffffff7cfe7f3ffbfffe7ffffb2cf9ff3ff7fe000f3fcffffffc1fffbffffffe7e7e7c7ffbfffe7ffffbacf9ff3ff7fe7fcf3fcfffffff87ffbffffffe7e7e03fffbfffe7ffffb9ef9ff3ff7fe7fcf3fcfffffffe7ffbffffffefe7e7ffffbfffe7ffffb9e79ff3ff7fe7f9f3fcfffffeff3ffbffffffefe7e7f9ffbfffe7ffff79e7cfe7ff7ff3f9f9f8fffffeff3ffbffffffe7e7f7f1ffbfffe7f1ff79e7efcfff7ff3f3f9f0fffffe7f7ffbffffff27eff3f3ffbfffe7f0fe38e3f39fff7ffce7fc04fffffe1cfff9ffffff019ff9e7ffbfffe7f1fffffffc7fff7fff1fffbcfffffee3fff87fffffbe7ffe1fffbffe00ffffffffffffff7ffffffffcffffffffffffffffffffffffffffbfffe7ffffffffffffff7ffffffffcffffffffffffffffffffffffffffbfffe7ffffffffffffff7ffffffffcffffffffffffffffffffffffffffbfffe7ffffffffffffff7ffffffffcffffffffffffffffffffffffffffbfe7e7ffffffffffffff7ffffffffcfffffffffff3ffffffffffffffffbfe7efffffffffffffff7ffffffffcfffffffffff1ffffffffffffffffbfe7cfffffffffffffff03fffffffc3ffffffffff1ffffffffffffffff81f03fffffffffffffff3ffffffffcfffffffffffbffffffffffffffff9ffffff0d0a424152203334382c203433392c20322c2039360d0a424152203239322c203533352c2035362c20320d0a424152203330302c203439352c2034382c20320d0a424152203236302c203434372c20322c2038380d0a424152203230342c203434372c2035362c20320d0a424152203137362c203434372c20322c2039360d0a424152203131362c203435352c20322c2038320d0a424152203132302c203437392c2035362c20320d0a4241522034342c203533352c2034382c20320d0a4241522039322c203435352c20322c2038300d0a4241522032302c203435352c2037322c20320d0a4241522032312c203435352c20322c2034300d0a4241522032312c203439352c2032342c20320d0a4241522034352c203437392c20322c2031360d0a4241522033362c203437392c2031362c20320d0a424152203238342c203339312c2034302c20320d0a424152203332342c203334332c20322c2034380d0a424152203332342c203238372c20322c2033320d0a424152203237362c203238372c2034382c20320d0a4241522035322c203331312c2034382c20320d0a424152203238342c203233392c2034382c20320d0a424152203330382c203138332c20322c2035360d0a424152203134382c203233392c2034382c20320d0a424152203139362c203139312c20322c2034380d0a424152203134382c203139312c2034382c20320d0a4241522036382c203139312c2034382c20320d0a4241522037362c203135312c2034302c20320d0a4241522037362c203131392c20322c2033320d0a4241522037362c2035352c20322c2033320d0a4241522037362c2035352c2034382c20320d0a424152203131322c203533352c2036342c20320d0a424152203332302c203334332c2031362c20320d0a424152203332302c203331392c2031362c20320d0a424152203333362c203331392c20322c2032340d0a4241522035362c203132302c2032342c20320d0a4241522035362c2038372c2032342c20320d0a4241522035362c2038382c20322c2033320d0a424152203232342c203234372c2033322c20320d0a424152203235362c203231352c20322c2033320d0a424152203232342c203231352c2033322c20320d0a424152203232342c203138342c20322c2033320d0a424152203232342c203139312c2033322c20320d0a424152203237322c203331312c20322c2035360d0a424152203231362c203336372c2035362c20320d0a424152203231362c203331392c20322c2034380d0a424152203234302c203331382c20322c2034390d0a424152203138342c203335312c20322c2031360d0a424152203136382c203335312c2031362c20320d0a424152203136382c203331312c20322c2034300d0a424152203135322c203335312c2031362c20320d0a424152203135322c203335312c20322c2031360d0a5052494e5420312c31"</span></span><br><span class="line">image = Image.open(<span class="string">'print.jpg'</span>)</span><br><span class="line">pixels = []</span><br><span class="line">w = (<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1248</span>):</span><br><span class="line">    pixels.append(s[i*<span class="number">2</span>:i*<span class="number">2</span>+<span class="number">2</span>])</span><br><span class="line">    pixels[i] = bin(int(pixels[i], <span class="number">16</span>))[<span class="number">2</span>:].rjust(<span class="number">8</span>,<span class="string">'0'</span>)</span><br><span class="line">count = <span class="number">0</span></span><br><span class="line">print(pixels)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">48</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">26</span>):</span><br><span class="line">        <span class="keyword">for</span> k <span class="keyword">in</span> range(<span class="number">8</span>):</span><br><span class="line">            <span class="keyword">if</span> pixels[count][k] == <span class="string">'1'</span>:</span><br><span class="line">                image.putpixel((<span class="number">138</span>+j*<span class="number">8</span>+k, <span class="number">75</span>+i), w)</span><br><span class="line">        count += <span class="number">1</span></span><br><span class="line">pixels = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">928</span>):</span><br><span class="line">    pixels.append(t[i*<span class="number">2</span>:i*<span class="number">2</span>+<span class="number">2</span>])</span><br><span class="line">    pixels[i] = bin(int(pixels[i], <span class="number">16</span>))[<span class="number">2</span>:].rjust(<span class="number">8</span>,<span class="string">'0'</span>)</span><br><span class="line">count = <span class="number">0</span></span><br><span class="line">print(pixels)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">32</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">29</span>):</span><br><span class="line">        <span class="keyword">for</span> k <span class="keyword">in</span> range(<span class="number">8</span>):</span><br><span class="line">            <span class="keyword">if</span> pixels[count][k] == <span class="string">'1'</span>:</span><br><span class="line">                image.putpixel((<span class="number">130</span>+j*<span class="number">8</span>+k, <span class="number">579</span>+i), w)</span><br><span class="line">        count += <span class="number">1</span></span><br><span class="line">image.show()</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="E:\文档中心\印象图片\2.PNG" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>flag:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;my_tsc_hc3pnikdk&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="draw-1"><a href="#draw-1" class="headerlink" title="draw"></a>draw</h3><h4 id="Description-2"><a href="#Description-2" class="headerlink" title="Description"></a>Description</h4><h4 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution"></a>Solution</h4><h2 id="crypto"><a href="#crypto" class="headerlink" title="crypto"></a>crypto</h2><h3 id="draw-2"><a href="#draw-2" class="headerlink" title="draw"></a>draw</h3><h4 id="Description-3"><a href="#Description-3" class="headerlink" title="Description"></a>Description</h4><h4 id="Solution-3"><a href="#Solution-3" class="headerlink" title="Solution"></a>Solution</h4>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-10-29T11:21:54.834Z" itemprop="dateUpdated">2019-10-29 19:21:54</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/05/21/RCTF2019%E2%80%94%E2%80%94WriteUp/" target="_blank" rel="external">http://localhost:4000/2019/05/21/RCTF2019%E2%80%94%E2%80%94WriteUp/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://localhost:4000">
+            <img src="/img/ddd428.png" alt="hgh">
+            hgh
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/writeup/" rel="tag">writeup</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://localhost:4000/2019/05/21/RCTF2019%E2%80%94%E2%80%94WriteUp/&title=《RCTF2019——WriteUp》 — hghhgghhg&pic=http://localhost:4000/img/ddd428.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://localhost:4000/2019/05/21/RCTF2019%E2%80%94%E2%80%94WriteUp/&title=《RCTF2019——WriteUp》 — hghhgghhg&source=hghhgghhg blog" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2019/05/21/RCTF2019%E2%80%94%E2%80%94WriteUp/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《RCTF2019——WriteUp》 — hghhgghhg&url=http://localhost:4000/2019/05/21/RCTF2019%E2%80%94%E2%80%94WriteUp/&via=http://localhost:4000" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://localhost:4000/2019/05/21/RCTF2019%E2%80%94%E2%80%94WriteUp/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/07/05/ISITDTU%20CTF%202019/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">ISITDTU CTF 2019</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/03/30/%E5%98%89%E9%9F%A6%E6%80%9D%E6%9D%AF--Writeup/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">嘉韦思杯 2019</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>hgh &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://localhost:4000/2019/05/21/RCTF2019%E2%80%94%E2%80%94WriteUp/&title=《RCTF2019——WriteUp》 — hghhgghhg&pic=http://localhost:4000/img/ddd428.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://localhost:4000/2019/05/21/RCTF2019%E2%80%94%E2%80%94WriteUp/&title=《RCTF2019——WriteUp》 — hghhgghhg&source=hghhgghhg blog" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2019/05/21/RCTF2019%E2%80%94%E2%80%94WriteUp/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《RCTF2019——WriteUp》 — hghhgghhg&url=http://localhost:4000/2019/05/21/RCTF2019%E2%80%94%E2%80%94WriteUp/&via=http://localhost:4000" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://localhost:4000/2019/05/21/RCTF2019%E2%80%94%E2%80%94WriteUp/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://localhost:4000/2019/05/21/RCTF2019%E2%80%94%E2%80%94WriteUp/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'Come here!!!';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Welcome to hgh's blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

