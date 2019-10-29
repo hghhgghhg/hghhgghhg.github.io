@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Byte Bandits CTF 2019--WriteUp | hghhgghhg | CTF is funny!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="注：复现，并非全是比赛时解出来的,该题解主要用于个人记录与分享  miscbash-fuDescription123BASH &amp;lt;3 UPPERCASEnc 13.234.130.76 7002  Analysis12345678bash: cannot set terminal process group (1): Not a ttybash: no job control in this">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Byte Bandits CTF 2019--WriteUp">
+<meta property="og:url" content="http:&#x2F;&#x2F;localhost:4000&#x2F;2019&#x2F;01&#x2F;30&#x2F;Byte%20Bandits%20CTF%202019--WriteUp&#x2F;index.html">
+<meta property="og:site_name" content="hghhgghhg">
+<meta property="og:description" content="注：复现，并非全是比赛时解出来的,该题解主要用于个人记录与分享  miscbash-fuDescription123BASH &amp;lt;3 UPPERCASEnc 13.234.130.76 7002  Analysis12345678bash: cannot set terminal process group (1): Not a ttybash: no job control in this">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-29T06:09:11.442Z">
+<meta name="twitter:card" content="summary">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/DDD428LOGO.png)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/ddd428.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">hgh</h5>
+          <a href="mailto:1950771661@qq.com" target="_blank" rel="noopener" title="1950771661@qq.com" class="mail">1950771661@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/hghhgghhg" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Byte Bandits CTF 2019--WriteUp</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Byte Bandits CTF 2019--WriteUp</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-01-30T12:20:10.000Z" itemprop="datePublished" class="page-time">
+  2019-01-30
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#misc"><span class="post-toc-number">1.</span> <span class="post-toc-text">misc</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#bash-fu"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">bash-fu</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Description"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">Description</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Analysis"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">Analysis</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Solve"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">Solve</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Methods-1"><span class="post-toc-number">1.1.3.1.</span> <span class="post-toc-text">Methods 1</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Methods-2"><span class="post-toc-number">1.1.3.2.</span> <span class="post-toc-text">Methods 2</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Methods-3"><span class="post-toc-number">1.1.3.3.</span> <span class="post-toc-text">Methods 3</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Let-it-go"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Let it go</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Description-1"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">Description</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Analysis-1"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">Analysis</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Solve-1"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">Solve</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#vish"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">vish</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Description-2"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">Description</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Analysis-2"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">Analysis</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Solve-2"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">Solve</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#crypto"><span class="post-toc-number">2.</span> <span class="post-toc-text">crypto</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#oldschool"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">oldschool</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Description-3"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">Description</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Analysis-3"><span class="post-toc-number">2.1.2.</span> <span class="post-toc-text">Analysis</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Solve-3"><span class="post-toc-number">2.1.3.</span> <span class="post-toc-text">Solve</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#RivestShamirAdleman"><span class="post-toc-number">3.</span> <span class="post-toc-text">RivestShamirAdleman</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Description-4"><span class="post-toc-number">3.0.1.</span> <span class="post-toc-text">Description</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Analysis-4"><span class="post-toc-number">3.0.2.</span> <span class="post-toc-text">Analysis</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Solve-4"><span class="post-toc-number">3.0.3.</span> <span class="post-toc-text">Solve</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#veryAsymmetric"><span class="post-toc-number">4.</span> <span class="post-toc-text">veryAsymmetric</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Description-5"><span class="post-toc-number">4.0.1.</span> <span class="post-toc-text">Description</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Analysis-5"><span class="post-toc-number">4.0.2.</span> <span class="post-toc-text">Analysis</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Solve-5"><span class="post-toc-number">4.0.3.</span> <span class="post-toc-text">Solve</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#veryAsymmetric-1"><span class="post-toc-number">5.</span> <span class="post-toc-text">veryAsymmetric</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Description-6"><span class="post-toc-number">5.0.1.</span> <span class="post-toc-text">Description</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Analysis-6"><span class="post-toc-number">5.0.2.</span> <span class="post-toc-text">Analysis</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Solve-6"><span class="post-toc-number">5.0.3.</span> <span class="post-toc-text">Solve</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Byte Bandits CTF 2019--WriteUp"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Byte Bandits CTF 2019--WriteUp</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-01-30 20:20:10" datetime="2019-01-30T12:20:10.000Z"  itemprop="datePublished">2019-01-30</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <ul>
+<li>注：复现，并非全是比赛时解出来的,该题解主要用于个人记录与分享</li>
+</ul>
+<h2 id="misc"><a href="#misc" class="headerlink" title="misc"></a>misc</h2><h3 id="bash-fu"><a href="#bash-fu" class="headerlink" title="bash-fu"></a>bash-fu</h3><h4 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">BASH &lt;3 UPPERCASE</span><br><span class="line"></span><br><span class="line">nc 13.234.130.76 7002</span><br></pre></td></tr></table></figure>
+
+<h4 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">bash: cannot set terminal process group (1): Not a tty</span><br><span class="line">bash: no job control in this shell</span><br><span class="line">bash-4.4$ ls</span><br><span class="line">ls</span><br><span class="line">bash: LS: command not found</span><br><span class="line">bash-4.4$ pwd</span><br><span class="line">pwd</span><br><span class="line">bash: PWD: command not found</span><br></pre></td></tr></table></figure>
+
+<p>该题将命令变成大写以至于失效，该如何绕过呢</p>
+<h4 id="Solve"><a href="#Solve" class="headerlink" title="Solve"></a>Solve</h4><h5 id="Methods-1"><a href="#Methods-1" class="headerlink" title="Methods 1"></a>Methods 1</h5><p>思路来源于</p>
+<p>创造出小写字母，发现可以使用字符串传参，然后执行字符串即可，</p>
+<p>如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@vultr ~]# l=&apos;ls /&apos;</span><br><span class="line">[root@vultr ~]# $&#123;l,,&#125;</span><br><span class="line">bin ....</span><br></pre></td></tr></table></figure>
+
+<p>详细解题过程看上方链接</p>
+<h5 id="Methods-2"><a href="#Methods-2" class="headerlink" title="Methods 2"></a>Methods 2</h5><p>使用Linux自带参数跳出大写锁定。</p>
+<p>思路来源：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">linux中shell变量$#,$@,$0,$1,$2的含义解释: </span><br><span class="line">变量说明: </span><br><span class="line">$$ </span><br><span class="line">Shell本身的PID（ProcessID） </span><br><span class="line">$! </span><br><span class="line">Shell最后运行的后台Process的PID </span><br><span class="line">$? </span><br><span class="line">最后运行的命令的结束代码（返回值） </span><br><span class="line">$- </span><br><span class="line">使用Set命令设定的Flag一览 </span><br><span class="line">$* </span><br><span class="line">所有参数列表。如&quot;$*&quot;用「&quot;」括起来的情况、以&quot;$1 $2 … $n&quot;的形式输出所有参数。 </span><br><span class="line">$@ </span><br><span class="line">所有参数列表。如&quot;$@&quot;用「&quot;」括起来的情况、以&quot;$1&quot; &quot;$2&quot; … &quot;$n&quot; 的形式输出所有参数。 </span><br><span class="line">$# </span><br><span class="line">添加到Shell的参数个数 </span><br><span class="line">$0 </span><br><span class="line">Shell本身的文件名 </span><br><span class="line">$1～$n </span><br><span class="line">添加到Shell的各参数值。$1是第1参数、$2是第2参数…。</span><br></pre></td></tr></table></figure>
+
+<p>这里有bashPDF文档一份：</p>
+<p>本题解法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$0</span><br><span class="line">ls</span><br><span class="line">ls /jail</span><br><span class="line">cat /jail/flag.txt</span><br></pre></td></tr></table></figure>
+
+<h5 id="Methods-3"><a href="#Methods-3" class="headerlink" title="Methods 3"></a>Methods 3</h5><p>思路来源</p>
+<p>正统解法，将命令改回小写锁定（谷歌得）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;command,,&#125; - the , denotes lowercase</span><br></pre></td></tr></table></figure>
+
+<p>然后正常操作即可</p>
+<p>flag:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;b@$h_jails_are_3asy_p3@sy&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Let-it-go"><a href="#Let-it-go" class="headerlink" title="Let it go"></a>Let it go</h3><h4 id="Description-1"><a href="#Description-1" class="headerlink" title="Description"></a>Description</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">So come on, let it go Just let it be Why don&apos;t you be you And I&apos;ll be me....</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>一个challenge.pcap文件</p>
+</blockquote>
+<h4 id="Analysis-1"><a href="#Analysis-1" class="headerlink" title="Analysis"></a>Analysis</h4><p>文件全程进行NTP协议（<strong>网络时间协定</strong>）交互。</p>
+<p>NTP协议介绍：</p>
+<h4 id="Solve-1"><a href="#Solve-1" class="headerlink" title="Solve"></a>Solve</h4><p>额，解题其实跟会不会NTP协议没有一点关系。。。。我服了</p>
+<p>脑洞题（题解来自ctftime–PwnaSonic战队）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">challenge.pcap is a file that captures only NTP packets.</span><br><span class="line"></span><br><span class="line">I checked the IP address carefully. Then I found that the first byte of the IP address (xxx.168.43.105) is a flag.</span><br><span class="line"></span><br><span class="line">No.12: 70 .168.43.105 　 70=F</span><br><span class="line">No.14: 76 .168.43.105 　 76=L</span><br><span class="line">No.16: 65 .168.43.105 　 65=A</span><br><span class="line">No.18: 71 .168.43.105 　 71=G</span><br><span class="line">No.20: 123 .168.43.105 　 123=&#123;</span><br><span class="line">...</span><br><span class="line">No.82: 125 .168.43.105 　 125=&#125;</span><br></pre></td></tr></table></figure>
+
+<p>flag：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FLAG&#123;WH3R3_H4V3_U_B33n_All_MY_LiF3&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="vish"><a href="#vish" class="headerlink" title="vish"></a>vish</h3><h4 id="Description-2"><a href="#Description-2" class="headerlink" title="Description"></a>Description</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Vim is a versatile piece of technology. But can it hold?</span><br><span class="line"></span><br><span class="line">http://13.234.130.76:7003</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Analysis-2"><a href="#Analysis-2" class="headerlink" title="Analysis"></a>Analysis</h4><p>进入vim编辑界面，可以通过Ctrl+W进入命令行，可以通过执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:![随便附加命令]</span><br></pre></td></tr></table></figure>
+
+<h4 id="Solve-2"><a href="#Solve-2" class="headerlink" title="Solve"></a>Solve</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">:!ls /</span><br><span class="line">:!cat /flag.txt</span><br></pre></td></tr></table></figure>
+
+<p>flag:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;bram_loves_jails&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="crypto"><a href="#crypto" class="headerlink" title="crypto"></a>crypto</h2><h3 id="oldschool"><a href="#oldschool" class="headerlink" title="oldschool"></a>oldschool</h3><h4 id="Description-3"><a href="#Description-3" class="headerlink" title="Description"></a>Description</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Csj mexp vz gvmM3wjkCMwnHCs3XmMvkjDvQs3w</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Analysis-3"><a href="#Analysis-3" class="headerlink" title="Analysis"></a>Analysis</h4><p>使用的是affine cipher加密</p>
+<p>这里有一个中英双语的affine cipher解读：</p>
+<h4 id="Solve-3"><a href="#Solve-3" class="headerlink" title="Solve"></a>Solve</h4><p>找</p>
+<p>暴力破解，或手动写脚本暴力破解</p>
+<p>在线解（参数设置，3 ——23）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">the flag is diff3rentfromth3affineciph3r</span><br></pre></td></tr></table></figure>
+
+
+
+<p>提交不对，注意大小写，将对应大写改为大写即可</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gvmM3wjkCMwnHCs3XmMvkjDvQs3w</span><br><span class="line">difF3renTFroMTh3AfFineCiPh3r</span><br></pre></td></tr></table></figure>
+
+
+
+<p>flag：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;difF3renTFroMTh3AfFineCiPh3r&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="RivestShamirAdleman"><a href="#RivestShamirAdleman" class="headerlink" title="RivestShamirAdleman"></a>RivestShamirAdleman</h2><h4 id="Description-4"><a href="#Description-4" class="headerlink" title="Description"></a>Description</h4><p>就一个txt文件。</p>
+<p>e = 3<br>n = 22272129080562722886614022632205442705494455272860112814093083500097723366897651161029102178806468364810560145326674298943748926312059319333104024877629414355081997511170571841726554870330438449136414942769879449909945280622679982416961505259605748700527626064176345428348075666618966413358066674766244602120334405919054045097465042177827566762056612497539403392371174259602854649957161582616110665358774209954483243807893225011511670025850800717182535575577848500527430246259134071980979951803599863210705004134764027126983838884518704239682964897619030091789047630556807645411417077149617559860988186649846538955623<br>c = 56274920108122478990888092521371739605513959053322262229138771723654033167756128122086229722406180593128664696512912311575327724724695863345048713415525599333</p>
+<h4 id="Analysis-4"><a href="#Analysis-4" class="headerlink" title="Analysis"></a>Analysis</h4><p>低指数攻击（这个n太大了，按照flag的长度，hex(flag)**3远小于n，可以直接开方）</p>
+<p>有关rsa的其他操作可以看本人以前的文章：</p>
+<h4 id="Solve-4"><a href="#Solve-4" class="headerlink" title="Solve"></a>Solve</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">import binascii</span><br><span class="line">import gmpy2</span><br><span class="line"></span><br><span class="line">e = 3</span><br><span class="line">n = 22272129080562722886614022632205442705494455272860112814093083500097723366897651161029102178806468364810560145326674298943748926312059319333104024877629414355081997511170571841726554870330438449136414942769879449909945280622679982416961505259605748700527626064176345428348075666618966413358066674766244602120334405919054045097465042177827566762056612497539403392371174259602854649957161582616110665358774209954483243807893225011511670025850800717182535575577848500527430246259134071980979951803599863210705004134764027126983838884518704239682964897619030091789047630556807645411417077149617559860988186649846538955623</span><br><span class="line">c = 56274920108122478990888092521371739605513959053322262229138771723654033167756128122086229722406180593128664696512912311575327724724695863345048713415525599333</span><br><span class="line">i = 0</span><br><span class="line">while 1:</span><br><span class="line">    if(gmpy2.iroot(c+i*n,e)[1]==1):</span><br><span class="line">        m,s = gmpy2.iroot(c+i*n,e)</span><br><span class="line">        print(m)</span><br><span class="line">        print(i)</span><br><span class="line">        print(hex(int(m)))</span><br><span class="line">        flag = binascii.unhexlify(hex(int(m))[2:-1])</span><br><span class="line">        print(flag)</span><br><span class="line">        break</span><br><span class="line">    i = i+1</span><br><span class="line">#i=0</span><br></pre></td></tr></table></figure>
+
+<p>flag:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;nO_paDDing00_rsa&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="veryAsymmetric"><a href="#veryAsymmetric" class="headerlink" title="veryAsymmetric"></a>veryAsymmetric</h2><h4 id="Description-5"><a href="#Description-5" class="headerlink" title="Description"></a>Description</h4><p>题目给了3个文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">publickey.pem</span><br><span class="line">privatekey.pem</span><br><span class="line">ciphertext.txt</span><br></pre></td></tr></table></figure>
+
+<h4 id="Analysis-5"><a href="#Analysis-5" class="headerlink" title="Analysis"></a>Analysis</h4><p>题目服务器关了，无法下载文件了（我比赛时没有看这个题）</p>
+<p>不过只要是对于n的分解，可以采用</p>
+<p>分解，然后求出n的欧拉值</p>
+<h4 id="Solve-5"><a href="#Solve-5" class="headerlink" title="Solve"></a>Solve</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">import gmpy2</span><br><span class="line">import binascii</span><br><span class="line">factor = [115792089237316195423570985008687907853269984665640564039457584007913129619947,</span><br><span class="line">115792089237316195423570985008687907853269984665640564039457584007913129622923,</span><br><span class="line">115792089237316195423570985008687907853269984665640564039457584007913129592533,</span><br><span class="line">115792089237316195423570985008687907853269984665640564039457584007913129565927,</span><br><span class="line">115792089237316195423570985008687907853269984665640564039457584007913129541417,</span><br><span class="line">115792089237316195423570985008687907853269984665640564039457584007913129526203,</span><br><span class="line">115792089237316195423570985008687907853269984665640564039457584007913129507009,</span><br><span class="line">115792089237316195423570985008687907853269984665640564039457584007913129472659]</span><br><span class="line">n = 32317006071311007300714876688669951960444102669715484032130345427524654951631353355419877650806916212276402500548858834151025886661601982160629740366812343760839221218796456588791364620661035477524068742062486001097578134510998674555248555977747978320447065884046895815192913148345135256027099316122532348924259238397978283369582137813597737466275611732114098373554060037893185561621885934653748989988135247387463949515190516437670638317207973599216865318816980188306165655166925075452855367348439305737609452524641689752934451982713102744691251509730280711661703014774940296810705133733436287195960150698286350156051</span><br><span class="line">phi = 1</span><br><span class="line">e = 257</span><br><span class="line">for i in factor:</span><br><span class="line">    phi = phi*(i-1)</span><br><span class="line"></span><br><span class="line">d = gmpy2.invert(e,phi)</span><br><span class="line">print (d*e)%phi</span><br><span class="line">c = 0xe51dadb138bcfc8f132fb353cb49f1c8c5543f4e7b81a071882b1e278c7b96db88f2dc0a73b6cb4f827f3fe6b83344ab625c1060a36754eae25d1cf96a2885c6d81706ef9e041a9f7e4c688a65d35b47cdbb0aa8759c8e60f46a070c0dd289d57f4bf9b5f37a687c104d00bb4b732d26ab042b624431c071ab35e351613504fe4c2de6bc0d9be0a856f2f6d89a883c134351469f7489ad28cc6795e35dc6fb2e207c736d8d37863c09aec376e74af3ec37ae0d3b18083681989ad6394d6837fe66fccd506c85daf8b2b5ff3e544cc7098a1e3b67e5737037217fe7a0df79d002420db69c561d2f0c420d74898fd120540d32dfb63cf5059db2c7ef41697bcb8f</span><br><span class="line">m = pow(c,d,n)</span><br><span class="line">print binascii.unhexlify(hex(int(m))[2:-1])</span><br></pre></td></tr></table></figure>
+
+
+
+<p>flag:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;s0_youH_ave_found_Al1_7h3_PrIm3s&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="veryAsymmetric-1"><a href="#veryAsymmetric-1" class="headerlink" title="veryAsymmetric"></a>veryAsymmetric</h2><h4 id="Description-6"><a href="#Description-6" class="headerlink" title="Description"></a>Description</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Start with this one!</span><br><span class="line"></span><br><span class="line">nc 13.233.66.116 5000</span><br></pre></td></tr></table></figure>
+
+
+
+<p>题目给了个文件 bb.py</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/python3 -u</span><br><span class="line">import os</span><br><span class="line">from binascii import hexlify, unhexlify</span><br><span class="line"></span><br><span class="line">flag = open(&quot;./flag&quot;,&quot;rb&quot;).read()</span><br><span class="line"></span><br><span class="line">class bb(object):</span><br><span class="line">  def __init__(self, key):</span><br><span class="line">    self.meh = [x for x in range(256)]</span><br><span class="line">    j = 0</span><br><span class="line">    for i in range(256):</span><br><span class="line">      j = (j + self.meh[i] + key[i%len(key)])&amp;0xff</span><br><span class="line">      self.meh[i], self.meh[j] = self.meh[j], self.meh[i]</span><br><span class="line">    self.cat = 0</span><br><span class="line">    self.mouse = 0</span><br><span class="line"></span><br><span class="line">  def crypt(self, string):</span><br><span class="line">    out = []</span><br><span class="line">    for c in string:</span><br><span class="line">      self.cat = (self.cat+1)&amp;0xff</span><br><span class="line">      self.mouse = (self.cat+self.meh[self.cat])&amp;0xff</span><br><span class="line">      self.meh[self.cat], self.meh[self.mouse] = self.meh[self.mouse], self.meh[self.cat]</span><br><span class="line">      k = self.meh[ (self.meh[self.cat]+self.meh[self.mouse])&amp;0xff ]//2</span><br><span class="line">      out.append((c+k)&amp;0xff)</span><br><span class="line">    return bytearray(out)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">cipher = bb(os.urandom(32))</span><br><span class="line"></span><br><span class="line">while True:</span><br><span class="line">  print(&quot;Commands: \n(e)ncrypt msg or (p)rint flag&quot;)</span><br><span class="line">  choice = input()</span><br><span class="line"></span><br><span class="line">  if choice == &apos;e&apos;:</span><br><span class="line">    message = input()</span><br><span class="line">    print(hexlify(cipher.crypt(unhexlify(message))))</span><br><span class="line">  elif choice == &apos;p&apos;:</span><br><span class="line">    print(hexlify(cipher.crypt(flag)))</span><br><span class="line">  else:</span><br><span class="line">    print(&quot;meh!&quot;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="Analysis-6"><a href="#Analysis-6" class="headerlink" title="Analysis"></a>Analysis</h4><p>这个是在积累知识点，阅读大佬的writeup</p>
+<h4 id="Solve-6"><a href="#Solve-6" class="headerlink" title="Solve"></a>Solve</h4><p>大佬的代码在我本地跑有点问题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">q = (L[k][i] - o) &amp; 255</span><br><span class="line">改为：</span><br><span class="line">q = (ord(L[k][i]) - ord(o)) &amp; 255</span><br></pre></td></tr></table></figure>
+
+<p>完整代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">import socket</span><br><span class="line">from binascii import unhexlify as unhex</span><br><span class="line"></span><br><span class="line">s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)</span><br><span class="line">s.connect((&apos;13.233.66.116&apos;, 5000))</span><br><span class="line">s.recv(4096)</span><br><span class="line"></span><br><span class="line">L = []</span><br><span class="line">charset = b&apos;&#123;&#125;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_&apos;</span><br><span class="line"></span><br><span class="line">count = 0</span><br><span class="line">while True:</span><br><span class="line">    s.send(b&apos;p\n&apos;)</span><br><span class="line">    res = s.recv(4096)</span><br><span class="line">    try:</span><br><span class="line">        res = unhex(res.split(b&apos;\n&apos;)[0].split(b&quot;&apos;&quot;)[1])</span><br><span class="line">    except:</span><br><span class="line">        continue</span><br><span class="line">    L.append(res)</span><br><span class="line"></span><br><span class="line">    plaintext = b&apos;&apos;</span><br><span class="line">    for i in range(43):</span><br><span class="line">        for o in charset:</span><br><span class="line">            good = True</span><br><span class="line">            for k in range(len(L)):</span><br><span class="line">                q = (ord(L[k][i]) - ord(o)) &amp; 255</span><br><span class="line">                if q &gt;= 128:</span><br><span class="line">                    good = False</span><br><span class="line">                    break</span><br><span class="line">            if good:</span><br><span class="line">                plaintext += bytes([o])</span><br><span class="line">                break</span><br><span class="line"></span><br><span class="line">    print(count, plaintext)</span><br><span class="line">    count += 1</span><br></pre></td></tr></table></figure>
+
+
+
+<p>flag:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;4r3_dyn4m1c_sb0x3s_a_th1ng_0f_b34uty&#125;</span><br></pre></td></tr></table></figure>
+
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-10-29T06:09:11.442Z" itemprop="dateUpdated">2019-10-29 14:09:11</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/01/30/Byte%20Bandits%20CTF%202019--WriteUp/" target="_blank" rel="external">http://localhost:4000/2019/01/30/Byte%20Bandits%20CTF%202019--WriteUp/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://localhost:4000">
+            <img src="/img/ddd428.png" alt="hgh">
+            hgh
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://localhost:4000/2019/01/30/Byte%20Bandits%20CTF%202019--WriteUp/&title=《Byte Bandits CTF 2019--WriteUp》 — hghhgghhg&pic=http://localhost:4000/img/ddd428.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://localhost:4000/2019/01/30/Byte%20Bandits%20CTF%202019--WriteUp/&title=《Byte Bandits CTF 2019--WriteUp》 — hghhgghhg&source=hghhgghhg blog" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2019/01/30/Byte%20Bandits%20CTF%202019--WriteUp/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Byte Bandits CTF 2019--WriteUp》 — hghhgghhg&url=http://localhost:4000/2019/01/30/Byte%20Bandits%20CTF%202019--WriteUp/&via=http://localhost:4000" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://localhost:4000/2019/01/30/Byte%20Bandits%20CTF%202019--WriteUp/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/10/28/hello-world/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Hello World</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/11/30/t/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">t</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>hgh &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://localhost:4000/2019/01/30/Byte%20Bandits%20CTF%202019--WriteUp/&title=《Byte Bandits CTF 2019--WriteUp》 — hghhgghhg&pic=http://localhost:4000/img/ddd428.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://localhost:4000/2019/01/30/Byte%20Bandits%20CTF%202019--WriteUp/&title=《Byte Bandits CTF 2019--WriteUp》 — hghhgghhg&source=hghhgghhg blog" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2019/01/30/Byte%20Bandits%20CTF%202019--WriteUp/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Byte Bandits CTF 2019--WriteUp》 — hghhgghhg&url=http://localhost:4000/2019/01/30/Byte%20Bandits%20CTF%202019--WriteUp/&via=http://localhost:4000" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://localhost:4000/2019/01/30/Byte%20Bandits%20CTF%202019--WriteUp/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://localhost:4000/2019/01/30/Byte%20Bandits%20CTF%202019--WriteUp/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'Come here!!!';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Welcome to hgh's blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
