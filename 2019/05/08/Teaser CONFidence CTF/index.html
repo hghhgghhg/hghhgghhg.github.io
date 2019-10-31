@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Teaser CONFidence CTF | hghhgghhg | CTF is funny!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="cryptoreally_suspicious_acronymDescription加密代码 123456789101112131415def bytes_to_long(data):    return int(data.encode(&amp;quot;hex&amp;quot;),16)def rsa(msg,e,n):    return pow(bytes_to_long(msg),e,n)flag =">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Teaser CONFidence CTF">
+<meta property="og:url" content="http:&#x2F;&#x2F;localhost:4000&#x2F;2019&#x2F;05&#x2F;08&#x2F;Teaser%20CONFidence%20CTF&#x2F;index.html">
+<meta property="og:site_name" content="hghhgghhg">
+<meta property="og:description" content="cryptoreally_suspicious_acronymDescription加密代码 123456789101112131415def bytes_to_long(data):    return int(data.encode(&amp;quot;hex&amp;quot;),16)def rsa(msg,e,n):    return pow(bytes_to_long(msg),e,n)flag =">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-31T10:31:50.905Z">
+<meta name="twitter:card" content="summary">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/DDD428LOGO.png)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/ddd428.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">hgh</h5>
+          <a href="mailto:1950771661@qq.com" target="_blank" rel="noopener" title="1950771661@qq.com" class="mail">1950771661@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/hghhgghhg" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Teaser CONFidence CTF</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Teaser CONFidence CTF</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-05-08T08:26:19.000Z" itemprop="datePublished" class="page-time">
+  2019-05-08
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#crypto"><span class="post-toc-number">1.</span> <span class="post-toc-text">crypto</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#really-suspicious-acronym"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">really_suspicious_acronym</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Description"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">Description</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Teaser CONFidence CTF"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Teaser CONFidence CTF</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-05-08 16:26:19" datetime="2019-05-08T08:26:19.000Z"  itemprop="datePublished">2019-05-08</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="crypto"><a href="#crypto" class="headerlink" title="crypto"></a>crypto</h2><h3 id="really-suspicious-acronym"><a href="#really-suspicious-acronym" class="headerlink" title="really_suspicious_acronym"></a>really_suspicious_acronym</h3><h4 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h4><p>加密代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">def bytes_to_long(data):</span><br><span class="line">    return int(data.encode(&quot;hex&quot;),16)</span><br><span class="line"></span><br><span class="line">def rsa(msg,e,n):</span><br><span class="line">    return pow(bytes_to_long(msg),e,n)</span><br><span class="line"></span><br><span class="line">flag = open(&apos;flag.txt&apos;,&apos;r&apos;).read()</span><br><span class="line">tmp = randint(2**1023, 2**1024)</span><br><span class="line">e = 65537</span><br><span class="line">p = next_prime(57005*tmp+randint(2, 2**500))</span><br><span class="line">q = next_prime(48879*tmp+randint(2, 2**500))</span><br><span class="line">N =  p*q</span><br><span class="line">print(&apos;msg1 = &apos;+str(rsa(&quot;You can&apos;t factor the modulus&quot;,e,N)))</span><br><span class="line">print(&apos;msg2 = &apos;+str(rsa(&quot;If you don&apos;t know the modulus!&quot;,e,N)))</span><br><span class="line">print(&apos;flag = &apos;+str(rsa(flag,e,N)))</span><br></pre></td></tr></table></figure>
+
+<p>输出文件信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">msg1 = 4249729541274832324831915101850978041491970958978013333892918723306168770472089196478720527554982764987079625218029445015042835412969986610407794962546486526768377464483162272541733624521350257458334912357961557141551376502679112069746250223130120067678503609054343306910481618502449487751467838568736395758064426403381068760701434585433915614901796040740316824283643177505677105619002929103619338876322183416750542848507631412106633630984867562243228659040403724671325236096319784525457674398019860558530212905126133378508676777200538275088387251038714220361173376355185449239483472545370043145325106307606431828449482078191</span><br><span class="line">msg2 = 13075855845498384344820257559893309320125843093107442572680776872299102248743866420640323500087788163238819301260173322187978140866718036292385520509724506487692001245730298675731681509412177547061396861961413760298064385526657135656283464759479388590822600747903100354135682624356454872283852822117199641700847558605700370117557855396952083088645477966782338316017387406733063346986224014837246404581562813312855644424128648363175792786282857154624788625411070173092512834181678732914231669616670515512774709315620233482515821178277673737845032672993814500177126048019814877397547310166915188341668439101769932492677363463422</span><br><span class="line">flag = 1325070956009103489249194637347510588506729608784127511926628895543304940415297099207601498626181915901848862854995077315475674257593360012633818395699000501896896712855638114932274873636706679536094148084825113213348693669110684534612150434985589138003619494080556587882502882245480530148296233019306164832959924719530089539412878605051284492900919153291539285764067215954480046474237129247005910958854570936626494664674014970792183182621261776942952172643573955950074108555363333808330455648256916095619261620286120748266415219259665310637340092503523139379869446053982200858497231506892485419429178671743186148288407233657</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msg1=(string1)^&#123;e&#125;mod(n)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msg1-(string1)^&#123;e&#125;=k1*n</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msg2=(string2)^&#123;e&#125;mod(n)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msg2-(string2)^&#123;e&#125;=k2*n</span><br></pre></td></tr></table></figure>
+
+<p>由此可以求出n</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n=gcd((msg1-(string1)^&#123;e&#125;),(msg2-(string2)^&#123;e&#125;))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x = pow(m1,e)-c1</span><br><span class="line">y = pow(m2,e)-c2</span><br><span class="line">n = gmpy2.gcd(x, y)</span><br></pre></td></tr></table></figure>
+
+<p>然后就是分解p和q了，已知<br>$$<br>p = 57005*tmp+y1<br>$$</p>
+<p>$$<br>q = 48879*tmp+y2<br>$$</p>
+<p>tmp是一个1024bit的数，而y1,y2小于500bit<br>$$<br>p/q=57005/48879<br>$$</p>
+<p>$$<br>p<em>q=57005</em>48879<em>tmp^2+x</em>tmp+y<br>$$</p>
+<p>由于x,y远小于tmp</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">t = gmpy2.iroot(n/(57005*48879),2)</span><br><span class="line">tmp = t[0]-2**482</span><br></pre></td></tr></table></figure>
+
+<p>至于为什么要减掉2^482，是为了让后面有解，所以2^500，2^499，2^498…一直到2^482，手动调出来的</p>
+<p>然后已知tmp，就可以求x和y了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x = (n-57005*tmp*48879*tmp)/tmp </span><br><span class="line">y = n-57005*tmp*tmp*48879-x*tmp</span><br></pre></td></tr></table></figure>
+
+<p>再然后求p和q</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">y = 57005*48879*y</span><br><span class="line">a = x*x-4*y</span><br><span class="line">#print (gmpy2.iroot(a,2)[0]+x)/(2*48879)</span><br><span class="line">p = 57005*tmp+1078399475444525965078564490579013145936057428039919829946148754465684831538693463366057742140506319392824923574770027498415725867779340864216973742259</span><br><span class="line">q = 48879*tmp+(x-(gmpy2.iroot(a,2)[0]+x)/2) / 57005</span><br></pre></td></tr></table></figure>
+
+<p>最后就是正常的rsa解密了</p>
+<p>完整代码如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">import gmpy2</span><br><span class="line">import binascii</span><br><span class="line"></span><br><span class="line">def bytes_to_long(data):</span><br><span class="line">    return int(data.encode(&quot;hex&quot;),16)</span><br><span class="line"></span><br><span class="line">e = 65537</span><br><span class="line">c1 = 4249729541274832324831915101850978041491970958978013333892918723306168770472089196478720527554982764987079625218029445015042835412969986610407794962546486526768377464483162272541733624521350257458334912357961557141551376502679112069746250223130120067678503609054343306910481618502449487751467838568736395758064426403381068760701434585433915614901796040740316824283643177505677105619002929103619338876322183416750542848507631412106633630984867562243228659040403724671325236096319784525457674398019860558530212905126133378508676777200538275088387251038714220361173376355185449239483472545370043145325106307606431828449482078191</span><br><span class="line">c2 = 13075855845498384344820257559893309320125843093107442572680776872299102248743866420640323500087788163238819301260173322187978140866718036292385520509724506487692001245730298675731681509412177547061396861961413760298064385526657135656283464759479388590822600747903100354135682624356454872283852822117199641700847558605700370117557855396952083088645477966782338316017387406733063346986224014837246404581562813312855644424128648363175792786282857154624788625411070173092512834181678732914231669616670515512774709315620233482515821178277673737845032672993814500177126048019814877397547310166915188341668439101769932492677363463422</span><br><span class="line">c3 = 1325070956009103489249194637347510588506729608784127511926628895543304940415297099207601498626181915901848862854995077315475674257593360012633818395699000501896896712855638114932274873636706679536094148084825113213348693669110684534612150434985589138003619494080556587882502882245480530148296233019306164832959924719530089539412878605051284492900919153291539285764067215954480046474237129247005910958854570936626494664674014970792183182621261776942952172643573955950074108555363333808330455648256916095619261620286120748266415219259665310637340092503523139379869446053982200858497231506892485419429178671743186148288407233657</span><br><span class="line"></span><br><span class="line">m1 = bytes_to_long(&quot;You can&apos;t factor the modulus&quot;)</span><br><span class="line">m2 = bytes_to_long(&quot;If you don&apos;t know the modulus!&quot;)</span><br><span class="line">&apos;&apos;&apos;</span><br><span class="line">x = pow(m1,e)-c1</span><br><span class="line">y = pow(m2,e)-c2</span><br><span class="line"></span><br><span class="line">n = gmpy2.gcd(x, y)</span><br><span class="line">print (&apos;n = &apos;+str(n))</span><br><span class="line">&apos;&apos;&apos;</span><br><span class="line">n = 34825223743402829383680359547814183240817664070909938698674658390374124787235739502688056639022131897715513587903467527066065545399622834534513631867145432553730850980331789931667370903396032758515681278057031496814054828419443822343986117760958186984521716807347123949922837482460532728350223473430713058522361175980521908817215812291272284241848086260180382693014713901303747444753828636575351349026883294939561001468099252543181336195746032718177937417431101756313823635150129601855358558635996348271242920308406268552606733676301725088348399264293936151662467456410825402303921583389167882090767423931762347825907802328053</span><br><span class="line"></span><br><span class="line">t = gmpy2.iroot(n/(57005*48879),2)</span><br><span class="line">tmp = t[0]-2**482</span><br><span class="line">print &quot;tmp 约为&quot;+str(tmp)</span><br><span class="line">print &quot;检验：&quot;+str(n/(tmp*tmp)-48879*57005)</span><br><span class="line">x = (n-57005*tmp*48879*tmp)/tmp </span><br><span class="line">y = n-57005*tmp*tmp*48879-x*tmp</span><br><span class="line">#print(&apos;x=&apos;+str(x))</span><br><span class="line">#print(&apos;y=&apos;+str(y))</span><br><span class="line"></span><br><span class="line">y = 57005*48879*y</span><br><span class="line">a = x*x-4*y</span><br><span class="line">#print (gmpy2.iroot(a,2)[0]+x)/(2*48879)</span><br><span class="line">p = 57005*tmp+1078399475444525965078564490579013145936057428039919829946148754465684831538693463366057742140506319392824923574770027498415725867779340864216973742259</span><br><span class="line">q = 48879*tmp+(x-(gmpy2.iroot(a,2)[0]+x)/2) / 57005</span><br><span class="line"></span><br><span class="line">d = gmpy2.invert(e,(p-1)*(q-1))</span><br><span class="line">print &quot;d为：&quot;</span><br><span class="line">print d</span><br><span class="line">tm = pow(c3,d,n)</span><br><span class="line">flag = binascii.unhexlify(hex(int(tm))[2:-1])</span><br><span class="line">print &quot;flag为：&quot;</span><br><span class="line">print(flag)</span><br></pre></td></tr></table></figure>
+
+<p>flag</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p4&#123;S3cur1ty_th0ru9h_0b5cur1ty_4t_i7s_fin3s7&#125;</span><br></pre></td></tr></table></figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-10-31T10:31:50.905Z" itemprop="dateUpdated">2019-10-31 18:31:50</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/05/08/Teaser%20CONFidence%20CTF/" target="_blank" rel="external">http://localhost:4000/2019/05/08/Teaser%20CONFidence%20CTF/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://localhost:4000">
+            <img src="/img/ddd428.png" alt="hgh">
+            hgh
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://localhost:4000/2019/05/08/Teaser%20CONFidence%20CTF/&title=《Teaser CONFidence CTF》 — hghhgghhg&pic=http://localhost:4000/img/ddd428.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://localhost:4000/2019/05/08/Teaser%20CONFidence%20CTF/&title=《Teaser CONFidence CTF》 — hghhgghhg&source=hghhgghhg blog" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2019/05/08/Teaser%20CONFidence%20CTF/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Teaser CONFidence CTF》 — hghhgghhg&url=http://localhost:4000/2019/05/08/Teaser%20CONFidence%20CTF/&via=http://localhost:4000" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://localhost:4000/2019/05/08/Teaser%20CONFidence%20CTF/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/05/15/%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%ACbyte/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">byte运算简写</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/04/30/CTF2019----Writeup/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">\*CTF2019----Writeup</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>hgh &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://localhost:4000/2019/05/08/Teaser%20CONFidence%20CTF/&title=《Teaser CONFidence CTF》 — hghhgghhg&pic=http://localhost:4000/img/ddd428.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://localhost:4000/2019/05/08/Teaser%20CONFidence%20CTF/&title=《Teaser CONFidence CTF》 — hghhgghhg&source=hghhgghhg blog" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2019/05/08/Teaser%20CONFidence%20CTF/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Teaser CONFidence CTF》 — hghhgghhg&url=http://localhost:4000/2019/05/08/Teaser%20CONFidence%20CTF/&via=http://localhost:4000" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://localhost:4000/2019/05/08/Teaser%20CONFidence%20CTF/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://localhost:4000/2019/05/08/Teaser%20CONFidence%20CTF/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'Come here!!!';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Welcome to hgh's blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

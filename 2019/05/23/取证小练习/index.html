@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>取证小练习 | hghhgghhg | CTF is funny!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="注：取证实操，otterctf2018的8个取证题 12sekurlsa::minidump lsass.dmpsekurlsa::tspkg    1 - What the password?Description源文件 1you got a sample of rick&amp;apos;s PC&amp;apos;s memory. can you get his user password? format">
+<meta property="og:type" content="article">
+<meta property="og:title" content="取证小练习">
+<meta property="og:url" content="http:&#x2F;&#x2F;localhost:4000&#x2F;2019&#x2F;05&#x2F;23&#x2F;%E5%8F%96%E8%AF%81%E5%B0%8F%E7%BB%83%E4%B9%A0&#x2F;index.html">
+<meta property="og:site_name" content="hghhgghhg">
+<meta property="og:description" content="注：取证实操，otterctf2018的8个取证题 12sekurlsa::minidump lsass.dmpsekurlsa::tspkg    1 - What the password?Description源文件 1you got a sample of rick&amp;apos;s PC&amp;apos;s memory. can you get his user password? format">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-31T10:33:47.194Z">
+<meta name="twitter:card" content="summary">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/DDD428LOGO.png)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/ddd428.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">hgh</h5>
+          <a href="mailto:1950771661@qq.com" target="_blank" rel="noopener" title="1950771661@qq.com" class="mail">1950771661@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/hghhgghhg" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">取证小练习</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">取证小练习</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-05-23T09:48:46.000Z" itemprop="datePublished" class="page-time">
+  2019-05-23
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-What-the-password"><span class="post-toc-number">1.</span> <span class="post-toc-text">1 - What the password?</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Description"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Description</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#solve"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">solve</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-General-Info"><span class="post-toc-number">2.</span> <span class="post-toc-text">2 - General Info</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Description-1"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Description</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#solve-1"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">solve</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-Play-Time"><span class="post-toc-number">3.</span> <span class="post-toc-text">3 - Play Time</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Description-2"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">Description</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#solve-2"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">solve</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-Name-Game"><span class="post-toc-number">4.</span> <span class="post-toc-text">4 - Name Game</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Description-3"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">Description</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#solve-3"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">solve</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-Name-Game-2"><span class="post-toc-number">5.</span> <span class="post-toc-text">5 - Name Game 2</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Description-4"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">Description</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#solve-4"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">solve</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-Silly-Rick"><span class="post-toc-number">6.</span> <span class="post-toc-text">6 - Silly Rick</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Description-5"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">Description</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#solve-5"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">solve</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-Hide-And-Seek"><span class="post-toc-number">7.</span> <span class="post-toc-text">7 - Hide And Seek</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Description-6"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">Description</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#solve-6"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">solve</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#8-Name-Game-2"><span class="post-toc-number">8.</span> <span class="post-toc-text">8 - Name Game 2</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Description-7"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">Description</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#solve-7"><span class="post-toc-number">8.2.</span> <span class="post-toc-text">solve</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-取证小练习"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">取证小练习</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-05-23 17:48:46" datetime="2019-05-23T09:48:46.000Z"  itemprop="datePublished">2019-05-23</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>注：取证实操，otterctf2018的8个取证题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sekurlsa::minidump lsass.dmp</span><br><span class="line">sekurlsa::tspkg</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="1-What-the-password"><a href="#1-What-the-password" class="headerlink" title="1 - What the password?"></a>1 - What the password?</h2><h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p><a href="https://otterctf.com/files/eb467cc1b14235473179f6215e0c7d00/OtterCTF.7z" target="_blank" rel="noopener">源文件</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">you got a sample of rick&apos;s PC&apos;s memory. can you get his user password? format: CTF&#123;...&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="solve"><a href="#solve" class="headerlink" title="solve"></a>solve</h3><p><a href="https://zenhack.it/writeups/OtterCTF2018/memory_forensics/" target="_blank" rel="noopener">参考博客1</a></p>
+<p><a href="https://github.com/mzfr/ctf-writeups/blob/master/OtterCTF%202018/Memory%20Forensics/1-What-the-password%3F.md" target="_blank" rel="noopener">参考博客2</a></p>
+<p>解决方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python vol.py -f OtterCTF.vmem imageinfo</span><br></pre></td></tr></table></figure>
+
+<p>得到系统消息，继续：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python vol.py -f OtterCTF.vmem --profile=Win7SP1x64 hivelist</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://www.aldeid.com/wiki/Volatility/Retrieve-password" target="_blank" rel="noopener">拿管理员hash密码</a>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python vol.py -f OtterCTF.vmem --profile=Win7SP1x64 -y 0xfffff8a000024010 -s 0xfffff8a0016d4010 hashdump</span><br></pre></td></tr></table></figure>
+
+<p>拿出hash值发现无法爆破</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Administrator:500:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::</span><br><span class="line">Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::</span><br><span class="line">Rick:1000:aad3b435b51404eeaad3b435b51404ee:518172d012f97d3a8fcc089615283940:::</span><br></pre></td></tr></table></figure>
+
+
+
+<p>中间过程可以参考博客链接，不重复说明了</p>
+<p>其实直接使用mimikatz插件一把搞定：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python vol.py -f OtterCTF.vmem --profile=Win7SP1x64 mimikatz</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Volatility Foundation Volatility Framework 2.6.1</span><br><span class="line">Module   User             Domain           Password</span><br><span class="line">-------- ---------------- ---------------- ----------------------------------------</span><br><span class="line">wdigest  Rick             WIN-LO6FAF3DTFE  MortyIsReallyAnOtter</span><br><span class="line">wdigest  WIN-LO6FAF3DTFE$ WORKGROUP</span><br></pre></td></tr></table></figure>
+
+
+
+<p>flag:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CTF&#123;MortyIsReallyAnOtter&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-General-Info"><a href="#2-General-Info" class="headerlink" title="2 - General Info"></a>2 - General Info</h2><h3 id="Description-1"><a href="#Description-1" class="headerlink" title="Description"></a>Description</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Let&apos;s start easy - whats the PC&apos;s name and IP address?</span><br></pre></td></tr></table></figure>
+
+<h3 id="solve-1"><a href="#solve-1" class="headerlink" title="solve"></a>solve</h3><p>PC名字上面已经拿出来了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CTF&#123;WIN-LO6FAF3DTFE&#125;</span><br></pre></td></tr></table></figure>
+
+<p>本机IP：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python vol.py -f OtterCTF.vmem --profile=Win7SP1x64 netscan</span><br></pre></td></tr></table></figure>
+
+<p>IP 为<code>192.168.202.131</code></p>
+<p>flag:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CTF&#123;WIN-LO6FAF3DTFE&#125;</span><br><span class="line">CTF&#123;192.168.202.131&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-Play-Time"><a href="#3-Play-Time" class="headerlink" title="3 - Play Time"></a>3 - Play Time</h2><h3 id="Description-2"><a href="#Description-2" class="headerlink" title="Description"></a>Description</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Rick just loves to play some good old videogames. can you tell which game is he playing? whats the IP address of the server?</span><br></pre></td></tr></table></figure>
+
+<h3 id="solve-2"><a href="#solve-2" class="headerlink" title="solve"></a>solve</h3><p>解决方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python vol.py -f OtterCTF.vmem --profile=Win7SP1x64 pslist</span><br></pre></td></tr></table></figure>
+
+<p>游戏名字为<code>LunarMS</code></p>
+<p>netscan里面有服务IP</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python vol.py -f OtterCTF.vmem --profile=Win7SP1x64 netscan | find /i &quot;LunarMS&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>flag：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CTF&#123;LunarMS&#125;</span><br><span class="line">CTF&#123;77.102.199.102&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="4-Name-Game"><a href="#4-Name-Game" class="headerlink" title="4 - Name Game"></a>4 - Name Game</h2><h3 id="Description-3"><a href="#Description-3" class="headerlink" title="Description"></a>Description</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">We know that the account was logged in to a channel called Lunar-3. what is the account name?</span><br></pre></td></tr></table></figure>
+
+<h3 id="solve-3"><a href="#solve-3" class="headerlink" title="solve"></a>solve</h3><p>windows下面做题真的很累。。。。</p>
+<p>Linux命令(将目标字符附近的6行打印出来)：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">strings OtterCTF.vmem | grep &apos;Lunar-3&apos; -A 3 -B 3</span><br></pre></td></tr></table></figure>
+
+<p>windows解决：</p>
+<p>不知道怎么把附近的字符串打印出来，所以先<a href="https://docs.microsoft.com/en-us/sysinternals/downloads/strings" target="_blank" rel="noopener">下载strings.exe</a>然后将OtterCTF.vmem文件字符串提取出来，然后用git bash里面的<code>grep</code>即可相同操作：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">strings64.exe OtterCTF.vmem &gt; ooo.txt</span><br><span class="line">grep &apos;Lunar-3&apos; -A 3 -B 3 ooo.txt</span><br></pre></td></tr></table></figure>
+
+<p>这样就可以了，结果都是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">disabled</span><br><span class="line">mouseOver</span><br><span class="line">keyFocused</span><br><span class="line">Lunar-3</span><br><span class="line">0tt3r8r33z3</span><br><span class="line">Sound/UI.img/</span><br><span class="line">BtMouseClick</span><br><span class="line">--</span><br><span class="line">L`*</span><br><span class="line">Yt*</span><br><span class="line">L-2</span><br><span class="line">Lunar-3</span><br><span class="line">Lunar-4</span><br><span class="line">~&amp;S</span><br><span class="line">&gt;Zc</span><br></pre></td></tr></table></figure>
+
+<p>flag：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CTF&#123;0tt3r8r33z3&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="5-Name-Game-2"><a href="#5-Name-Game-2" class="headerlink" title="5 - Name Game 2"></a>5 - Name Game 2</h2><h3 id="Description-4"><a href="#Description-4" class="headerlink" title="Description"></a>Description</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">From a little research we found that the username of the logged on character is always after this signature: 0x64 0x??&#123;6-8&#125; 0x40 0x06 0x??&#123;18&#125; 0x5a 0x0c 0x00&#123;2&#125; What&apos;s rick&apos;s character&apos;s name? format: CTF&#123;...&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="solve-4"><a href="#solve-4" class="headerlink" title="solve"></a>solve</h3><p>将游戏进程文件导出，使用010editor进行查找<code>5a 0c 00 00</code>后面接着的就是flag</p>
+<p>解决命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python vol.py -f OtterCTF.vmem --profile=Win7SP1x64 memdump -D . -p 708</span><br></pre></td></tr></table></figure>
+
+<p>查找结果有185个。</p>
+<p>flag：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CTF&#123;M0rtyL0L&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="6-Silly-Rick"><a href="#6-Silly-Rick" class="headerlink" title="6 - Silly Rick"></a>6 - Silly Rick</h2><h3 id="Description-5"><a href="#Description-5" class="headerlink" title="Description"></a>Description</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Silly rick always forgets his email&apos;s password, so he uses a Stored Password Services online to store his password. He always copy and paste the password so he will not get it wrong. whats rick&apos;s email password?</span><br></pre></td></tr></table></figure>
+
+<h3 id="solve-5"><a href="#solve-5" class="headerlink" title="solve"></a>solve</h3><p>由<code>copy and paste the password</code>知道剪切板里面可能有密码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python vol.py -f OtterCTF.vmem --profile=Win7SP1x64 clipboard</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Volatility Foundation Volatility Framework 2.6.1</span><br><span class="line">Session    WindowStation Format                         Handle Object             Data</span><br><span class="line">---------- ------------- ------------------ ------------------ ------------------ --------------------------------------------------</span><br><span class="line">         1 WinSta0       CF_UNICODETEXT                0x602e3 0xfffff900c1ad93f0 M@il_Pr0vid0rs</span><br><span class="line">         1 WinSta0       CF_TEXT                          0x10 ------------------</span><br><span class="line">         1 WinSta0       0x150133L              0x200000000000 ------------------</span><br><span class="line">         1 WinSta0       CF_TEXT                           0x1 ------------------</span><br><span class="line">         1 ------------- ------------------           0x150133 0xfffff900c1c1adc0</span><br></pre></td></tr></table></figure>
+
+
+
+<p>flag:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CTF&#123;M@il_Pr0vid0rs&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="7-Hide-And-Seek"><a href="#7-Hide-And-Seek" class="headerlink" title="7 - Hide And Seek"></a>7 - Hide And Seek</h2><h3 id="Description-6"><a href="#Description-6" class="headerlink" title="Description"></a>Description</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The reason that we took rick&apos;s PC memory dump is because there was a malware infection. Please find the malware process name (including the extension)</span><br><span class="line"></span><br><span class="line">BEAWARE! There are only 3 attempts to get the right flag!</span><br></pre></td></tr></table></figure>
+
+<h3 id="solve-6"><a href="#solve-6" class="headerlink" title="solve"></a>solve</h3><p><a href="https://github.com/aadityapurani/My-CTF-Solutions/blob/master/otterctf-2018/memory-forensics/HideAndSeek.md" target="_blank" rel="noopener">参考链接</a></p>
+<p>解决命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python vol.py -f OtterCTF.vmem --profile=Win7SP1x64 pstree</span><br></pre></td></tr></table></figure>
+
+<p>结果部分展示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"> 0xfffffa801b27e060:explorer.exe                     2728   2696     33    854 2018-08-04 19:27:04 UTC+0000</span><br><span class="line">. 0xfffffa801b486b30:Rick And Morty                  3820   2728      4    185 2018-08-04 19:32:55 UTC+0000</span><br><span class="line">.. 0xfffffa801a4c5b30:vmware-tray.ex                 3720   3820      8    147 2018-08-04 19:33:02 UTC+0000</span><br><span class="line">. 0xfffffa801b2f02e0:WebCompanion.e                  2844   2728      0 ------ 2018-08-04 19:27:07 UTC+0000</span><br><span class="line">. 0xfffffa801a4e3870:chrome.exe                      4076   2728     44   1160 2018-08-04 19:29:30 UTC+0000</span><br><span class="line">.. 0xfffffa801a4eab30:chrome.exe                     4084   4076      8     86 2018-08-04 19:29:30 UTC+0000</span><br><span class="line">.. 0xfffffa801a5ef1f0:chrome.exe                     1796   4076     15    170 2018-08-04 19:33:41 UTC+0000</span><br><span class="line">.. 0xfffffa801aa00a90:chrome.exe                     3924   4076     16    228 2018-08-04 19:29:51 UTC+0000</span><br><span class="line">.. 0xfffffa801a635240:chrome.exe                     3648   4076     16    207 2018-08-04 19:33:38 UTC+0000</span><br><span class="line">.. 0xfffffa801a502b30:chrome.exe                      576   4076      2     58 2018-08-04 19:29:31 UTC+0000</span><br><span class="line">.. 0xfffffa801a4f7b30:chrome.exe                     1808   4076     13    229 2018-08-04 19:29:32 UTC+0000</span><br><span class="line">.. 0xfffffa801a7f98f0:chrome.exe                     2748   4076     15    181 2018-08-04 19:31:15 UTC+0000</span><br><span class="line">. 0xfffffa801b5cb740:LunarMS.exe                      708   2728     18    346 2018-08-04 19:27:39 UTC+0000</span><br><span class="line">. 0xfffffa801b1cdb30:vmtoolsd.exe                    2804   2728      6    190 2018-08-04 19:27:06 UTC+0000</span><br><span class="line">. 0xfffffa801b290b30:BitTorrent.exe                  2836   2728     24    471 2018-08-04 19:27:07 UTC+0000</span><br><span class="line">.. 0xfffffa801b4c9b30:bittorrentie.e                 2624   2836     13    316 2018-08-04 19:27:21 UTC+0000</span><br><span class="line">.. 0xfffffa801b4a7b30:bittorrentie.e                 2308   2836     15    337 2018-08-04 19:27:19 UTC+0000</span><br><span class="line"> 0xfffffa8018d44740:System                              4      0     95    411 2018-08-04 19:26:03 UTC+0000</span><br><span class="line">. 0xfffffa801947e4d0:smss.exe                         260      4      2     30 2018-08-04 19:26:03 UTC+0000</span><br><span class="line"> 0xfffffa801a2ed060:wininit.exe                       396    336      3     78 2018-08-04 19:26:11 UTC+0000</span><br><span class="line">. 0xfffffa801ab377c0:services.exe                     492    396     11    242 2018-08-04 19:26:12 UTC+0000</span><br><span class="line">.. 0xfffffa801afe7800:svchost.exe                    1948    492      6     96 2018-08-04 19:26:42 UTC+0000</span><br></pre></td></tr></table></figure>
+
+
+
+<p>flag:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CTF&#123;vmware-tray.exe&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="8-Name-Game-2"><a href="#8-Name-Game-2" class="headerlink" title="8 - Name Game 2"></a>8 - Name Game 2</h2><h3 id="Description-7"><a href="#Description-7" class="headerlink" title="Description"></a>Description</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">How did the malware got to rick&apos;s PC? It must be one of rick old illegal habits...</span><br></pre></td></tr></table></figure>
+
+<h3 id="solve-7"><a href="#solve-7" class="headerlink" title="solve"></a>solve</h3><p>解决命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python vol.py -f OtterCTF.vmem --profile=Win7SP1x64 filescan | grep &quot;Rick And Morty&quot;</span><br><span class="line">python vol.py -f OtterCTF.vmem --profile=Win7SP1x64 dumpfiles -Q 0x000000007dae9350 -D .</span><br></pre></td></tr></table></figure>
+
+<p>notepad++打开，里面有：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">website19:M3an_T0rren7_4_R!ck</span><br></pre></td></tr></table></figure>
+
+<p>flag：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CTF&#123;M3an_T0rren7_4_R!ck&#125;</span><br></pre></td></tr></table></figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-10-31T10:33:47.194Z" itemprop="dateUpdated">2019-10-31 18:33:47</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/05/23/%E5%8F%96%E8%AF%81%E5%B0%8F%E7%BB%83%E4%B9%A0/" target="_blank" rel="external">http://localhost:4000/2019/05/23/%E5%8F%96%E8%AF%81%E5%B0%8F%E7%BB%83%E4%B9%A0/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://localhost:4000">
+            <img src="/img/ddd428.png" alt="hgh">
+            hgh
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://localhost:4000/2019/05/23/%E5%8F%96%E8%AF%81%E5%B0%8F%E7%BB%83%E4%B9%A0/&title=《取证小练习》 — hghhgghhg&pic=http://localhost:4000/img/ddd428.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://localhost:4000/2019/05/23/%E5%8F%96%E8%AF%81%E5%B0%8F%E7%BB%83%E4%B9%A0/&title=《取证小练习》 — hghhgghhg&source=hghhgghhg blog" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2019/05/23/%E5%8F%96%E8%AF%81%E5%B0%8F%E7%BB%83%E4%B9%A0/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《取证小练习》 — hghhgghhg&url=http://localhost:4000/2019/05/23/%E5%8F%96%E8%AF%81%E5%B0%8F%E7%BB%83%E4%B9%A0/&via=http://localhost:4000" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://localhost:4000/2019/05/23/%E5%8F%96%E8%AF%81%E5%B0%8F%E7%BB%83%E4%B9%A0/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/07/05/ISITDTU%20CTF%202019/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">ISITDTU CTF 2019</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/05/21/RCTF2019%E2%80%94%E2%80%94WriteUp/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">RCTF2019——WriteUp</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>hgh &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://localhost:4000/2019/05/23/%E5%8F%96%E8%AF%81%E5%B0%8F%E7%BB%83%E4%B9%A0/&title=《取证小练习》 — hghhgghhg&pic=http://localhost:4000/img/ddd428.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://localhost:4000/2019/05/23/%E5%8F%96%E8%AF%81%E5%B0%8F%E7%BB%83%E4%B9%A0/&title=《取证小练习》 — hghhgghhg&source=hghhgghhg blog" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2019/05/23/%E5%8F%96%E8%AF%81%E5%B0%8F%E7%BB%83%E4%B9%A0/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《取证小练习》 — hghhgghhg&url=http://localhost:4000/2019/05/23/%E5%8F%96%E8%AF%81%E5%B0%8F%E7%BB%83%E4%B9%A0/&via=http://localhost:4000" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://localhost:4000/2019/05/23/%E5%8F%96%E8%AF%81%E5%B0%8F%E7%BB%83%E4%B9%A0/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://localhost:4000/2019/05/23/%E5%8F%96%E8%AF%81%E5%B0%8F%E7%BB%83%E4%B9%A0/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'Come here!!!';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Welcome to hgh's blog';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
