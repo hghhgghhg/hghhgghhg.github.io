@@ -225,7 +225,7 @@
 
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/05/08/Teaser%20CONFidence%20CTF/" target="_blank" rel="external">http://localhost:4000/2019/05/08/Teaser%20CONFidence%20CTF/</a>
+        欢迎各位观看hgh博客，由于这个博客建立不久，一些功能按键无法使用，请忽略它们！！！
         
     </div>
     
@@ -326,6 +326,23 @@
 
 
 
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'hghhgghhg',
+            repo: 'hgh_talk',
+            oauth: {
+                client_id: 'f246711fd3277ae830a1',
+                client_secret: '14cddd63f7f5dce5cd598016ea3e94671a70d5f5',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
 
 
 
@@ -363,7 +380,7 @@
         </p>
     </div>
     <div class="bottom">
-        <p><span>hgh &copy; 2015 - 2019</span>
+        <p><span>hgh &copy; 2018 - 2019</span>
             <span>
                 
                 Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
@@ -453,6 +470,27 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 <script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
 
 
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
 
 
 
